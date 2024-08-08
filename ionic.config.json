@@ -1,0 +1,7 @@
+{
+  "name": "cafm-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
