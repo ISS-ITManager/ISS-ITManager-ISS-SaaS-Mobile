@@ -1,2 +1,31 @@
 /* For information on how to create your own theme, please see:
 http://ionicframework.com/docs/theming/ */
+
+.header {
+    --background: #ffffff;
+}
+.content-body {
+    --background: #ffffff ;
+}
+
+ion-toolbar {
+    --border-width: 0 0 0.55px;
+    --border-color: #cccccc;
+}
+.footer-icon{
+    font-size: 1.9em;
+}
+
+.footer{
+    --background: transparent;
+}
+
+.card-wallet{
+    background: rgb(255,255,255);
+    background: linear-gradient(141deg, rgba(255,255,255,1) 0%, rgba(247,253,255,1) 62%, rgba(243,237,255,1) 100%);
+}
+
+.login-bg{
+    background: rgb(246,253,255);
+    background: linear-gradient(163deg, rgba(246,253,255,1) 0%, rgba(255,239,255,1) 50%, rgba(229,203,255,1) 100%);
+}

@@ -32,6 +32,13 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import MenuIndex from './pages/menu/MenuIndex';
+import WalletIndex from './pages/wallet/WalletIndex';
+import Login from './pages/auth/Login';
+import DashboardIndex from './pages/dashboard/DashboardIndex';
+import ProfileIndex from './pages/profile/ProfileIndex';
+import WorkordersIndex from './pages/workorders/WorkordersIndex';
+import ApprovalIndex from './pages/approval/ApprovalIndex';
 
 setupIonicReact();
 
@@ -39,11 +46,29 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
+        <Route exact path="/login">
+          <Login />
+        </Route>
+        <Route exact path="/wallet">
+          <WalletIndex />
         </Route>
         <Route exact path="/">
-          <Redirect to="/home" />
+          <Redirect to="/login" />
+        </Route>
+        <Route exact path="/menu">
+          <MenuIndex/>
+        </Route>
+        <Route exact path="/dashboard">
+          <DashboardIndex/>
+        </Route>
+        <Route exact path="/workorders">
+          <WorkordersIndex/>
+        </Route>
+        <Route exact path="/profile">
+          <ProfileIndex/>
+        </Route>
+        <Route exact path="/approval">
+          <ApprovalIndex/>
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>

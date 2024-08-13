@@ -1,0 +1,68 @@
+import React from 'react'
+import MasterComponent from '../../components/layouts/MasterComponent'
+import TitleComponent from '../../components/layouts/TitleComponent'
+import { useHistory, useLocation  } from 'react-router-dom';
+
+const ProfileIndex = () => {
+    
+    const history = useHistory();
+    const navigateTo = (path) => {
+        history.push(path);
+    };
+    return (
+        <MasterComponent>
+            <TitleComponent title={"Profile"} />
+            <div className="card mb-3 animate__animated animate__bounceInLeft border border-light">
+                <div className="card-body text-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/7405/7405892.png" className='w-25' alt="" /> <p />
+                    <span className='fw-bold mt-3 h4'>John Doe</span><br />
+                    <div className="row">
+                        <div className="col-12 text-start">
+                            <small className='fw-bold text-primary'>QID</small> <br />
+                            12345678901
+                        </div>
+                        <div className="col-12 text-start">
+                            <small className='fw-bold text-primary'>Classification</small> <br />
+                            Technician
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="card animate__animated animate__bounceInRight">
+                <div className="card-header text-primary fw-bold border border-light">
+                    Settings
+                </div>
+                <div className="card-body">
+                    <div className="mb-3 list-group list-group-flush">
+                        <a href="#" className="list-group-item list-group-item-action">
+                            <b className='text-primary'>Account Settings</b>
+                        </a>
+                        <a href="#" className="list-group-item list-group-item-action">
+                            <i className='bx bx-lock-open-alt me-2 ms-2'></i> Change Password
+                        </a>
+                        <a href="#" className="list-group-item list-group-item-action">
+                            <i className='bx bx-user me-2 ms-2'></i> Update Profile
+                        </a>
+                        <a href="#" className="list-group-item list-group-item-action">
+                            <b className='text-primary'>App Settings</b>
+                        </a>
+                        <a href="#" className="list-group-item list-group-item-action">
+                            <i className='bx bx-mobile-alt me-2 ms-2'></i> App Version
+                        </a>
+                        <a href="#" className="list-group-item list-group-item-action">
+                            <i className='bx bx-moon me-2 ms-2'></i> App Theme
+                        </a>
+                    </div>
+                </div>
+                <div className="card-footer p-0 text-center">
+                    <button className='mb-3 btn btn-label-danger'  onClick={() => navigateTo('/login')}>
+                        Logout
+                    </button>
+                </div>
+            </div>
+            
+        </MasterComponent>
+    )
+}
+
+export default ProfileIndex
