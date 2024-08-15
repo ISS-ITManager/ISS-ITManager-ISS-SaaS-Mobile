@@ -1,14 +1,17 @@
-import React from 'react'
-import MasterComponent from '../../components/layouts/MasterComponent'
-import TitleComponent from '../../components/layouts/TitleComponent'
-import { useHistory, useLocation  } from 'react-router-dom';
+import React from 'react';
+import MasterComponent from '../../components/layouts/MasterComponent';
+import TitleComponent from '../../components/layouts/TitleComponent';
 
 const ProfileIndex = () => {
-    
-    const history = useHistory();
-    const navigateTo = (path) => {
-        history.push(path);
+
+    const handleLogout = () => {
+        // Clear local storage
+        localStorage.clear();
+        
+        // Redirect to login page
+        window.location.href = './login';
     };
+
     return (
         <MasterComponent>
             <TitleComponent title={"Profile"} />
@@ -55,14 +58,13 @@ const ProfileIndex = () => {
                     </div>
                 </div>
                 <div className="card-footer p-0 text-center">
-                    <button className='mb-3 btn btn-label-danger'  onClick={() => navigateTo('/login')}>
+                    <button className='mb-3 btn btn-label-danger' onClick={handleLogout}>
                         Logout
                     </button>
                 </div>
             </div>
-            
         </MasterComponent>
-    )
-}
+    );
+};
 
-export default ProfileIndex
+export default ProfileIndex;

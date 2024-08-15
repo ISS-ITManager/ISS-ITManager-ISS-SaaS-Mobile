@@ -40,6 +40,12 @@ import ProfileIndex from './pages/profile/ProfileIndex';
 import WorkordersIndex from './pages/workorders/WorkordersIndex';
 import ApprovalIndex from './pages/approval/ApprovalIndex';
 
+import DashboardIndexSup from './pages/dashboard/supervisor/DashboardIndex';
+
+
+import DashboardIndexTech from './pages/dashboard/technician/DashboardIndex';
+
+
 setupIonicReact();
 
 const App: React.FC = () => (
@@ -58,18 +64,32 @@ const App: React.FC = () => (
         <Route exact path="/menu">
           <MenuIndex/>
         </Route>
-        <Route exact path="/dashboard">
-          <DashboardIndex/>
-        </Route>
-        <Route exact path="/workorders">
-          <WorkordersIndex/>
-        </Route>
         <Route exact path="/profile">
           <ProfileIndex/>
         </Route>
-        <Route exact path="/approval">
+{/*------------------------- admin --------------------------- */}
+
+        <Route exact path="/admin-dashboard">
+          <DashboardIndex/>
+        </Route>
+        <Route exact path="/admin-workorders">
+          <WorkordersIndex/>
+        </Route>
+        <Route exact path="/admin-approval">
           <ApprovalIndex/>
         </Route>
+{/*------------------------- super --------------------------- */}
+
+        <Route exact path="/supervisor-dashboard">
+          <DashboardIndexSup/>
+        </Route>
+        <Route exact path="/supervisor-workorders">
+          <WorkordersIndex/>
+        </Route>
+        <Route exact path="/supervisor-approval">
+          <ApprovalIndex/>
+        </Route>
+
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
