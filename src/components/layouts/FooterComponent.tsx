@@ -47,6 +47,93 @@
 
 // export default FooterComponent
 
+// import React from 'react';
+// import { IonFooter } from '@ionic/react';
+// import { useHistory, useLocation } from 'react-router-dom';
+
+// const FooterComponent = () => {
+//     const history = useHistory();
+//     const location = useLocation();
+//     const userRole = localStorage.getItem('userRole'); // Assuming userRole is stored in localStorage
+
+//     // Determine active path based on user role
+//     const isDashboardPage = location.pathname === (userRole === 'Technician' ? '/technician-dashboard' : userRole === 'Supervisor' ? '/supervisor-dashboard' : '/admin-dashboard');
+//     const isWorkorderPage = location.pathname === (userRole === 'Supervisor' || userRole === 'Admin' ? '/admin-workorders' : '/technician-workorders');
+//     const isApprovalPage = location.pathname === (userRole === 'Supervisor' || userRole === 'Admin' ? '/admin-approval' : '/technician-approval');
+//     const isProfilePage = location.pathname === '/profile';
+
+//     // Navigate to the specified path
+//     const navigateTo = (path) => {
+//         history.push(path);
+//     };
+
+//     return (
+//         <IonFooter className='text-center'>
+//             <div className="bg-light">
+//                 <div className="row pt-3">
+//                     {userRole === 'Admin' && (
+//                         <>
+//                             <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/admin-dashboard')}>
+//                                 <i className={`footer-icon bx bxs-dashboard ${isDashboardPage ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
+//                                 <span className={`badge badge-dot ${isDashboardPage ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
+//                             </div>
+//                             <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/admin-workorders')}>
+//                                 <i className={`footer-icon bx bx-briefcase ${isWorkorderPage ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
+//                                 <span className={`badge badge-dot ${isWorkorderPage ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
+//                             </div>
+//                             <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/admin-approval')}>
+//                                 <i className={`footer-icon bx bx-list-check ${isApprovalPage ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
+//                                 <span className={`badge badge-dot ${isApprovalPage ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
+//                             </div>
+//                         </>
+//                     )}
+
+//                     {userRole === 'Supervisor' && (
+//                         <>
+//                             <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/supervisor-dashboard')}>
+//                                 <i className={`footer-icon bx bxs-dashboard ${isDashboardPage ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
+//                                 <span className={`badge badge-dot ${isDashboardPage ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
+//                             </div>
+//                             <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/supervisor-workorders')}>
+//                                 <i className={`footer-icon bx bx-briefcase ${isWorkorderPage ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
+//                                 <span className={`badge badge-dot ${isWorkorderPage ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
+//                             </div>
+//                             <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/supervisor-approval')}>
+//                                 <i className={`footer-icon bx bx-list-check ${isApprovalPage ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
+//                                 <span className={`badge badge-dot ${isApprovalPage ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
+//                             </div>
+//                         </>
+//                     )}
+
+//                     {userRole === 'Technician' && (
+//                         <>
+//                             <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/technician-dashboard')}>
+//                                 <i className={`footer-icon bx bxs-dashboard ${isDashboardPage ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
+//                                 <span className={`badge badge-dot ${isDashboardPage ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
+//                             </div>
+//                             <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/technician-workorders')}>
+//                                 <i className={`footer-icon bx bx-briefcase ${isWorkorderPage ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
+//                                 <span className={`badge badge-dot ${isWorkorderPage ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
+//                             </div>
+//                             <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/technician-approval')}>
+//                                 <i className={`footer-icon bx bx-list-check ${isApprovalPage ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
+//                                 <span className={`badge badge-dot ${isApprovalPage ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
+//                             </div>
+//                         </>
+//                     )}
+
+//                     <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/profile')}>
+//                         <i className={`footer-icon bx bx-user ${isProfilePage ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
+//                         <span className={`badge badge-dot ${isProfilePage ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
+//                     </div>
+//                 </div>
+//             </div>
+//         </IonFooter>
+//     );
+// }
+
+// export default FooterComponent;
+
 import React from 'react';
 import { IonFooter } from '@ionic/react';
 import { useHistory, useLocation } from 'react-router-dom';
@@ -70,7 +157,7 @@ const FooterComponent = () => {
     return (
         <IonFooter className='text-center'>
             <div className="bg-light">
-                <div className="row pt-3">
+                <div className={`row pt-3 ${userRole === 'Technician' ? 'justify-content-center' : ''}`}>
                     {userRole === 'Admin' && (
                         <>
                             <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/admin-dashboard')}>
@@ -107,22 +194,14 @@ const FooterComponent = () => {
 
                     {userRole === 'Technician' && (
                         <>
-                            <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/technician-dashboard')}>
+                            <div className="mb-3 col-4 text-center" onClick={() => navigateTo('/technician-dashboard')}>
                                 <i className={`footer-icon bx bxs-dashboard ${isDashboardPage ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
                                 <span className={`badge badge-dot ${isDashboardPage ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
-                            </div>
-                            <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/technician-workorders')}>
-                                <i className={`footer-icon bx bx-briefcase ${isWorkorderPage ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
-                                <span className={`badge badge-dot ${isWorkorderPage ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
-                            </div>
-                            <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/technician-approval')}>
-                                <i className={`footer-icon bx bx-list-check ${isApprovalPage ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
-                                <span className={`badge badge-dot ${isApprovalPage ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
                             </div>
                         </>
                     )}
 
-                    <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/profile')}>
+                    <div className={`mb-3 ${userRole === 'Technician' ? 'col-4' : 'col-3'} text-center`} onClick={() => navigateTo('/profile')}>
                         <i className={`footer-icon bx bx-user ${isProfilePage ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
                         <span className={`badge badge-dot ${isProfilePage ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
                     </div>
@@ -133,4 +212,3 @@ const FooterComponent = () => {
 }
 
 export default FooterComponent;
-

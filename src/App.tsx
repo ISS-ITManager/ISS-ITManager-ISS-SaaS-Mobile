@@ -90,6 +90,18 @@ const App: React.FC = () => (
           <ApprovalIndex/>
         </Route>
 
+{/*------------------------- tech --------------------------- */}
+
+        <Route exact path="/technician-dashboard">
+          <DashboardIndexTech/>
+        </Route>
+        <Route exact path="/supervisor-workorders">
+          <WorkordersIndex/>
+        </Route>
+        <Route exact path="/supervisor-approval">
+          <ApprovalIndex/>
+        </Route>
+
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
