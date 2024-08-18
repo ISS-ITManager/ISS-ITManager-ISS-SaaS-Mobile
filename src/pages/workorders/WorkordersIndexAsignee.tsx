@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonModal, IonContent } from '@ionic/react';
+import { IonModal, IonContent, IonHeader, IonToolbar} from '@ionic/react';
 import MasterComponent from '../../components/layouts/MasterComponent';
 import TitleComponent from '../../components/layouts/TitleComponent';
 
@@ -65,55 +65,61 @@ const WorkordersIndexAsignee = () => {
       </div>
 
       <IonModal isOpen={showModal} onDidDismiss={closeModal}>
+        <IonHeader style={{ opacity: 0 }}>
+            <IonToolbar>
+            {/* This space will be invisible but reserved for the toolbar */}
+            </IonToolbar>
+        </IonHeader>
         <IonContent>
-          {selectedWorkOrder && (
+            {selectedWorkOrder && (
             <div className="container">
-              <div className="row mt-3">
+                <div className="row mt-3">
                 <div className="col-8">
-                  <h5 className="text-primary">{selectedWorkOrder.title}</h5>
+                    <h5 className="text-primary">{selectedWorkOrder.title}</h5>
                 </div>
                 <div className="col-4 mb-3">
-                  <button
+                    <button
                     className="btn btn-primary float-end rounded-pill"
                     onClick={closeModal}
-                  >
+                    >
                     <i className="fa fa-times"></i>
-                  </button>
+                    </button>
                 </div>
                 <div className="col-12">
-                  <p>{selectedWorkOrder.description}</p>
-                  <h6>Checklist</h6>
-                  <ul className="list-group">
+                    <p>{selectedWorkOrder.description}</p>
+                    <h6>Checklist</h6>
+                    <ul className="list-group">
                     {selectedWorkOrder.checklist.map((item, index) => (
-                      <li className="list-group-item" key={index}>
+                        <li className="list-group-item" key={index}>
                         <input
-                          type="checkbox"
-                          checked={item.completed}
-                          readOnly
+                            type="checkbox"
+                            checked={item.completed}
+                            readOnly
                         />{' '}
                         {item.item}
-                      </li>
+                        </li>
                     ))}
-                  </ul>
-                  <div className="mt-3">
+                    </ul>
+                    <div className="mt-3">
                     <h6>Photos</h6>
                     <div className="mt-2">
-                      {selectedWorkOrder.photos.map((photo, index) => (
+                        {selectedWorkOrder.photos.map((photo, index) => (
                         <img
-                          src={photo}
-                          alt={`Work Order Photo ${index}`}
-                          key={index}
-                          style={{ width: '100px', marginRight: '10px' }}
+                            src={photo}
+                            alt={`Work Order Photo ${index}`}
+                            key={index}
+                            style={{ width: '100px', marginRight: '10px' }}
                         />
-                      ))}
+                        ))}
                     </div>
-                  </div>
+                    </div>
                 </div>
-              </div>
+                </div>
             </div>
-          )}
+            )}
         </IonContent>
-      </IonModal>
+        </IonModal>
+
     </MasterComponent>
   );
 };

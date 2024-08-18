@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import MasterComponent from '../../components/layouts/MasterComponent'
 import TitleComponent from '../../components/layouts/TitleComponent'
-import { IonContent, IonModal, IonText } from '@ionic/react';
+import { IonContent, IonModal, IonText, IonHeader, IonToolbar } from '@ionic/react';
 
 const WorkordersIndex = () => {
     const [showModal, setShowModal] = useState(false);
@@ -78,6 +78,11 @@ const WorkordersIndex = () => {
             </div>
 
             <IonModal isOpen={showModal} onDidDismiss={closeModal}>
+            <IonHeader style={{ opacity: 0 }}>
+                <IonToolbar>
+                {/* This space will be invisible but reserved for the toolbar */}
+                </IonToolbar>
+            </IonHeader>
                 <IonContent>
                     <div className="container">
                         <div className="row mt-3">

@@ -3,7 +3,7 @@ import MasterComponent from '../../components/layouts/MasterComponent'
 import TitleComponent from '../../components/layouts/TitleComponent'
 
 import Chart from 'react-apexcharts';
-import { IonContent, IonModal } from '@ionic/react';
+import { IonContent, IonModal, IonHeader, IonToolbar } from '@ionic/react';
 
 const DashboardIndex = () => {
     const [showModal, setShowModal] = useState(false);
@@ -109,6 +109,11 @@ const DashboardIndex = () => {
                 </div>
             </div>
             <IonModal isOpen={showModal} onDidDismiss={closeModal}>
+            <IonHeader style={{ opacity: 0 }}>
+                <IonToolbar>
+                {/* This space will be invisible but reserved for the toolbar */}
+                </IonToolbar>
+            </IonHeader>
                 <IonContent>
                     <div className="container">
                         <div className="row mt-3">

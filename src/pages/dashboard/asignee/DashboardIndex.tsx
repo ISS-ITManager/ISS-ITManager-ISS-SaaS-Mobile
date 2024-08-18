@@ -206,7 +206,7 @@
 // export default DashboardIndex;
 
 import React, { useState } from 'react';
-import { IonModal, IonContent } from '@ionic/react';
+import { IonModal, IonContent, IonHeader, IonToolbar } from '@ionic/react';
 import MasterComponent from '../.././../components/layouts/MasterComponent';
 import TitleComponent from '../.././../components/layouts/TitleComponent';
 import Chart from 'react-apexcharts';
@@ -355,6 +355,11 @@ const DashboardIndex = () => {
             </div>
 
             <IonModal isOpen={showModal} onDidDismiss={closeModal}>
+            <IonHeader style={{ opacity: 0 }}>
+                <IonToolbar>
+                {/* This space will be invisible but reserved for the toolbar */}
+                </IonToolbar>
+            </IonHeader>
                 <IonContent>
                     {selectedWorkOrder && (
                         <div className="container">
