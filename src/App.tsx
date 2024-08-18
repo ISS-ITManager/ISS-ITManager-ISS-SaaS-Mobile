@@ -38,12 +38,13 @@ import Login from './pages/auth/Login';
 import DashboardIndex from './pages/dashboard/DashboardIndex';
 import ProfileIndex from './pages/profile/ProfileIndex';
 import WorkordersIndex from './pages/workorders/WorkordersIndex';
+import WorkordersIndexAsignee from './pages/workorders/WorkordersIndexAsignee';
 import ApprovalIndex from './pages/approval/ApprovalIndex';
 
-import DashboardIndexSup from './pages/dashboard/supervisor/DashboardIndex';
+import DashboardIndexSup from './pages/dashboard/requestor/DashboardIndex';
 
 
-import DashboardIndexTech from './pages/dashboard/technician/DashboardIndex';
+import DashboardIndexTech from './pages/dashboard/asignee/DashboardIndex';
 
 
 setupIonicReact();
@@ -78,25 +79,25 @@ const App: React.FC = () => (
         <Route exact path="/admin-approval">
           <ApprovalIndex/>
         </Route>
-{/*------------------------- super --------------------------- */}
+{/*------------------------- requestor --------------------------- */}
 
-        <Route exact path="/supervisor-dashboard">
+        <Route exact path="/requestor-dashboard">
           <DashboardIndexSup/>
         </Route>
-        <Route exact path="/supervisor-workorders">
+        <Route exact path="/requestor-workorders">
           <WorkordersIndex/>
         </Route>
-        <Route exact path="/supervisor-approval">
+        <Route exact path="/requestor-approval">
           <ApprovalIndex/>
         </Route>
 
 {/*------------------------- tech --------------------------- */}
 
-        <Route exact path="/technician-dashboard">
+        <Route exact path="/asignee-dashboard">
           <DashboardIndexTech/>
         </Route>
-        <Route exact path="/supervisor-workorders">
-          <WorkordersIndex/>
+        <Route exact path="/asignee-workorders">
+          <WorkordersIndexAsignee/>
         </Route>
         <Route exact path="/supervisor-approval">
           <ApprovalIndex/>

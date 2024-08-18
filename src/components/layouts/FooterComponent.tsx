@@ -144,9 +144,9 @@ const FooterComponent = () => {
     const userRole = localStorage.getItem('userRole'); // Assuming userRole is stored in localStorage
 
     // Determine active path based on user role
-    const isDashboardPage = location.pathname === (userRole === 'Technician' ? '/technician-dashboard' : userRole === 'Supervisor' ? '/supervisor-dashboard' : '/admin-dashboard');
-    const isWorkorderPage = location.pathname === (userRole === 'Supervisor' || userRole === 'Admin' ? '/admin-workorders' : '/technician-workorders');
-    const isApprovalPage = location.pathname === (userRole === 'Supervisor' || userRole === 'Admin' ? '/admin-approval' : '/technician-approval');
+    const isDashboardPage = location.pathname === (userRole === 'Asignee' ? '/asignee-dashboard' : userRole === 'Requestor' ? '/requestor-dashboard' : '/admin-dashboard');
+    const isWorkorderPage = location.pathname === (userRole === 'Requestor' || userRole === 'Admin' ? '/admin-workorders' : '/asignee-workorders');
+    const isApprovalPage = location.pathname === (userRole === 'Requestor' || userRole === 'Admin' ? '/admin-approval' : '/asignee-approval');
     const isProfilePage = location.pathname === '/profile';
 
     // Navigate to the specified path
@@ -157,7 +157,7 @@ const FooterComponent = () => {
     return (
         <IonFooter className='text-center'>
             <div className="bg-light">
-                <div className={`row pt-3 ${userRole === 'Technician' ? 'justify-content-center' : ''}`}>
+                <div className={`row pt-3 ${userRole === 'Asignee' ? 'justify-content-center' : ''}`}>
                     {userRole === 'Admin' && (
                         <>
                             <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/admin-dashboard')}>
@@ -175,33 +175,37 @@ const FooterComponent = () => {
                         </>
                     )}
 
-                    {userRole === 'Supervisor' && (
+                    {userRole === 'Requestor' && (
                         <>
-                            <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/supervisor-dashboard')}>
+                            <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/requestor-dashboard')}>
                                 <i className={`footer-icon bx bxs-dashboard ${isDashboardPage ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
                                 <span className={`badge badge-dot ${isDashboardPage ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
                             </div>
-                            <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/supervisor-workorders')}>
+                            <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/requestor-workorders')}>
                                 <i className={`footer-icon bx bx-briefcase ${isWorkorderPage ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
                                 <span className={`badge badge-dot ${isWorkorderPage ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
                             </div>
-                            <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/supervisor-approval')}>
+                            <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/requestor-approval')}>
                                 <i className={`footer-icon bx bx-list-check ${isApprovalPage ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
                                 <span className={`badge badge-dot ${isApprovalPage ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
                             </div>
                         </>
                     )}
 
-                    {userRole === 'Technician' && (
+                    {userRole === 'Asignee' && (
                         <>
-                            <div className="mb-3 col-4 text-center" onClick={() => navigateTo('/technician-dashboard')}>
+                            <div className="mb-3 col-4 text-center" onClick={() => navigateTo('/asignee-dashboard')}>
                                 <i className={`footer-icon bx bxs-dashboard ${isDashboardPage ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
                                 <span className={`badge badge-dot ${isDashboardPage ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
+                            </div>
+                            <div className="mb-3 col-4 text-center" onClick={() => navigateTo('/asignee-workorders')}>
+                                <i className={`footer-icon fas fa-list ${isWorkorderPage ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
+                                <span className={`badge badge-dot ${isWorkorderPage ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
                             </div>
                         </>
                     )}
 
-                    <div className={`mb-3 ${userRole === 'Technician' ? 'col-4' : 'col-3'} text-center`} onClick={() => navigateTo('/profile')}>
+                    <div className={`mb-3 ${userRole === 'Asignee' ? 'col-4' : 'col-3'} text-center`} onClick={() => navigateTo('/profile')}>
                         <i className={`footer-icon bx bx-user ${isProfilePage ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
                         <span className={`badge badge-dot ${isProfilePage ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
                     </div>

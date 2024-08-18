@@ -108,7 +108,7 @@ const DashboardIndex: React.FC = () => {
 
   return (
     <MasterComponent>
-      <TitleComponent title={"Supervisor Dashboard"} />
+      <TitleComponent title={"Requestor Dashboard"} />
       <div className="container">
         <div className="row my-3">
           <div className="col-12">
@@ -148,40 +148,74 @@ const DashboardIndex: React.FC = () => {
               <div className="card">
                 <div className="card-body animate__animated animate__bounceInLeft">
                   <h5 className="card-title">Create New Work Order Request</h5>
-                  <div className="mb-3">
-                    <label className="form-label">Title</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      name="title"
-                      value={newRequest.title}
-                      onChange={handleInputChange}
-                      placeholder="Enter request title"
-                    />
+                  <div className="row mb-3">
+                      <div className="col-md-12">
+                          <b className="text-info">Locality Details</b>
+                      </div>
+                      <div className="col-md-4 mb-2">
+                          <label htmlFor="">Location Group</label>
+                          <select name="#" id="" className="form-control select2">
+                          <option>Select Location Group </option>
+                          <option value="#">Qatar - Schools</option>
+                          <option value="#">United Kingdom - Nunnery</option>
+                          </select>
+                      </div>
+                      <div className="col-md-4 mb-2">
+                          <label htmlFor="">Property</label>
+                          <select name="#" id="" className="form-control select2">
+                          <option>Select Property </option>
+                          <option value="#">Al Maha Boys</option>
+                          <option value="#">Al Maha Girls</option>
+                          <option value="#">Al Jazeera</option>
+                          </select>
+                      </div>
+                      <div className="col-md-4 mb-2">
+                          <label htmlFor="">Floor</label>
+                          <select name="#" id="" className="form-control select2">
+                          <option>Select Floor </option>
+                          </select>
+                      </div>
+                      <div className="col-md-4 mb-2">
+                          <label htmlFor="">Zone</label>
+                          <select name="#" id="" className="form-control select2">
+                          <option>Select Zone </option>
+                          </select>
+                      </div>
+                      <div className="col-md-4 mb-2">
+                          <label htmlFor="">Space</label>
+                          <select name="#" id="" className="form-control select2">
+                          <option>Select Space </option>
+                          </select>
+                      </div>
                   </div>
-                  <div className="mb-3">
-                    <label className="form-label">Description</label>
-                    <textarea
-                      className="form-control"
-                      name="description"
-                      value={newRequest.description}
-                      onChange={handleInputChange}
-                      placeholder="Enter request description"
-                    />
+                      
+                  <div className="row mb-3">
+                      <div className="col-md-12">
+                          <b className="text-info">Work Details</b>
+                      </div>
+                      <div className="col-md-4">
+                          <label htmlFor="">Work Type</label>
+                          <select name="#" id="" className="form-control select2">
+                          <option value="#">Planned</option>
+                          <option value="#">General</option>
+                          <option value="#">Corrective</option>
+                          </select>
+                      </div>
+                      <div className="col-12">
+                          <label htmlFor="">Estimated Cost</label>
+                          <input type="number" className="form-control" name="" id=""  />
+                      </div>
+                     
+                      <div className="col-md-8">
+                          <label htmlFor=""> Work Instruction</label>
+                          <input type="number" className="form-control" placeholder="This is sample work instruction" name="" id="" />
+                      </div>
+                      <div className="col-12 text-center mt-3">
+                      <button className="btn btn-primary" onClick={handleSubmitRequest}>
+                        Submit Request
+                      </button>
+                      </div>
                   </div>
-                  <div className="mb-3">
-                    <label className="form-label">Location</label>
-                    <textarea
-                      className="form-control"
-                      name="location"
-                      value={newRequest.location}
-                      onChange={handleInputChange}
-                      placeholder="Enter request location"
-                    />
-                  </div>
-                  <button className="btn btn-primary" onClick={handleSubmitRequest}>
-                    Submit Request
-                  </button>
                 </div>
               </div>
             </div>
@@ -197,7 +231,7 @@ const DashboardIndex: React.FC = () => {
                 </div>
                 <div className="col-12">
                   <div className="mb-3">
-                    <label className="form-label">Technician</label>
+                    <label className="form-label">Techniciansss</label>
                     <select
                       className="form-select"
                       value={selectedTechnician}
