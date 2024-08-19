@@ -75,9 +75,13 @@ const ApprovalIndex = () => {
             </div>
 
             <IonModal isOpen={showModal} onDidDismiss={closeModal}>
-            <IonHeader style={{ opacity: 0 }}>
-                <IonToolbar>
-                {/* This space will be invisible but reserved for the toolbar */}
+            <IonHeader>
+                <IonToolbar style={{ '--background': 'transparent', '--border-color': 'transparent', '--ion-toolbar-border-width': '0px' }}>
+                    <div className="col-4 mb-3" slot="end">
+                        <button className='btn mt-2 btn-primary float-end rounded-pill' onClick={closeModal}>
+                            <i className='fa fa-times'></i> 
+                        </button>
+                    </div>
                 </IonToolbar>
             </IonHeader>
                 <IonContent>
@@ -88,11 +92,11 @@ const ApprovalIndex = () => {
                                     <i className='bx bx-pencil'></i>For Approval
                                 </h5>
                             </div>
-                            <div className="col-4 mb-3">
+                            {/* <div className="col-4 mb-3">
                                 <button className='btn mt-2 btn-primary float-end rounded-pill'  onClick={closeModal}>
                                     <i className='fa fa-times'></i> 
                                 </button>
-                            </div>
+                            </div> */}
                             <div className="col-12">
                                 <div className="card border border-light">
                                     <div className="card-body text-center">
