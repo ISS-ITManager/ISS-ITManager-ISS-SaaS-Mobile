@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import MasterComponent from '../.././../components/layouts/MasterComponent';
-import TitleComponent from '../.././../components/layouts/TitleComponent';
+import MasterComponent from '../.././../../components/layouts/MasterComponent';
+import TitleComponent from '../.././../../components/layouts/TitleComponent';
 import Chart from 'react-apexcharts';
 import { IonContent, IonModal } from '@ionic/react';
 
@@ -107,7 +107,7 @@ const DashboardIndex: React.FC = () => {
   ];
 
   return (
-    <MasterComponent>
+    <MasterComponent page="fm">
       <TitleComponent title={"Requestor Dashboard"} />
       <div className="container">
         <div className="row my-3">

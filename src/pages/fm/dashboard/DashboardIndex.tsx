@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import MasterComponent from '../../components/layouts/MasterComponent';
-import TitleComponent from '../../components/layouts/TitleComponent';
+import MasterComponent from '../../../components/layouts/MasterComponent';
+import TitleComponent from '../../../components/layouts/TitleComponent';
 import Chart from 'react-apexcharts';
 import { IonContent, IonModal, IonHeader, IonToolbar } from '@ionic/react';
 
@@ -95,7 +95,7 @@ const DashboardIndex = () => {
     ];
 
     return (
-        <MasterComponent>
+        <MasterComponent page='fm'>
             <TitleComponent title={"Dashboard"} />
             <div className="row mb-3 animate__animated animate__bounceInLeft">
                 <div className="col-12 mb-3">

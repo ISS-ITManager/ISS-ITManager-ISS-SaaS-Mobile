@@ -207,8 +207,8 @@
 
 import React, { useState } from 'react';
 import { IonModal, IonContent, IonHeader, IonToolbar } from '@ionic/react';
-import MasterComponent from '../.././../components/layouts/MasterComponent';
-import TitleComponent from '../.././../components/layouts/TitleComponent';
+import MasterComponent from '../../../../components/layouts/MasterComponent';
+import TitleComponent from '../../../../components/layouts/TitleComponent';
 import Chart from 'react-apexcharts';
 
 const DashboardIndex = () => {
@@ -325,7 +325,7 @@ const DashboardIndex = () => {
     ];
 
     return (
-        <MasterComponent>
+        <MasterComponent page='fm'>
             <TitleComponent title="Assignee Dashboard" />
             <div className="card">
                 <div className="card-body">

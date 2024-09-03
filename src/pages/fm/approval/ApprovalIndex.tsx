@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import MasterComponent from '../../components/layouts/MasterComponent'
-import TitleComponent from '../../components/layouts/TitleComponent'
+import MasterComponent from '../../../components/layouts/MasterComponent'
+import TitleComponent from '../../../components/layouts/TitleComponent'
 import { IonContent, IonModal, IonText, IonHeader, IonToolbar } from '@ionic/react';
 
 const ApprovalIndex = () => {
@@ -17,7 +17,7 @@ const ApprovalIndex = () => {
       setShowModal(false);
     };
     return (
-        <MasterComponent>
+        <MasterComponent page="fm">
             <TitleComponent title={"For Approval"} />
           
             <div className="card border border-light mb-3 animate__animated animate__bounceInRight">

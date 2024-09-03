@@ -35,16 +35,17 @@ import './theme/variables.css';
 import MenuIndex from './pages/menu/MenuIndex';
 import WalletIndex from './pages/wallet/WalletIndex';
 import Login from './pages/auth/Login';
-import DashboardIndex from './pages/dashboard/DashboardIndex';
+import DashboardIndex from './pages/fm/dashboard/DashboardIndex';
+import DashboardMain from './pages/main/DashboardMain';
 import ProfileIndex from './pages/profile/ProfileIndex';
-import WorkordersIndex from './pages/workorders/WorkordersIndex';
-import WorkordersIndexAsignee from './pages/workorders/WorkordersIndexAsignee';
-import ApprovalIndex from './pages/approval/ApprovalIndex';
+import WorkordersIndex from './pages/fm/workorders/WorkordersIndex';
+import WorkordersIndexAsignee from './pages/fm/workorders/WorkordersIndexAsignee';
+import ApprovalIndex from './pages/fm/approval/ApprovalIndex';
 
-import DashboardIndexSup from './pages/dashboard/requestor/DashboardIndex';
+import DashboardIndexSup from './pages/fm/dashboard/requestor/DashboardIndex';
 
 
-import DashboardIndexTech from './pages/dashboard/asignee/DashboardIndex';
+import DashboardIndexTech from './pages/fm/dashboard/asignee/DashboardIndex';
 
 
 setupIonicReact();
@@ -53,54 +54,70 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
+
+        <Route exact path="/">
+          <DashboardMain />
+        </Route>
         <Route exact path="/login">
           <Login />
         </Route>
         <Route exact path="/wallet">
           <WalletIndex />
         </Route>
-        <Route exact path="/">
+        {/* <Route exact path="/">
           <Redirect to="/login" />
-        </Route>
+        </Route> */}
         <Route exact path="/menu">
-          <MenuIndex/>
+          <MenuIndex />
         </Route>
         <Route exact path="/profile">
-          <ProfileIndex/>
-        </Route>
-{/*------------------------- admin --------------------------- */}
-
-        <Route exact path="/admin-dashboard">
-          <DashboardIndex/>
-        </Route>
-        <Route exact path="/admin-workorders">
-          <WorkordersIndex/>
-        </Route>
-        <Route exact path="/admin-approval">
-          <ApprovalIndex/>
-        </Route>
-{/*------------------------- requestor --------------------------- */}
-
-        <Route exact path="/requestor-dashboard">
-          <DashboardIndexSup/>
-        </Route>
-        <Route exact path="/requestor-workorders">
-          <WorkordersIndex/>
-        </Route>
-        <Route exact path="/requestor-approval">
-          <ApprovalIndex/>
+          <ProfileIndex />
         </Route>
 
-{/*------------------------- tech --------------------------- */}
+        {/*------------------------- main --------------------------- */}
+        <Route exact path="/main-dashboard">
+          <DashboardMain />
+        </Route>
 
-        <Route exact path="/asignee-dashboard">
-          <DashboardIndexTech/>
+
+        {/*------------------------- fm --------------------------- */}
+        <Route exact path="/fm" >
+          {localStorage.getItem("userRole") === "Admin"? <DashboardIndex /> : localStorage.getItem("userRole") === "Requestor" ?  <DashboardIndexSup /> :<DashboardIndexTech /> }
         </Route>
-        <Route exact path="/asignee-workorders">
-          <WorkordersIndexAsignee/>
+
+        {/*------------------------- admin --------------------------- */}
+
+        <Route exact path="/fm/admin-dashboard">
+          <DashboardIndex />
         </Route>
-        <Route exact path="/supervisor-approval">
-          <ApprovalIndex/>
+        <Route exact path="/fm/admin-workorders">
+          <WorkordersIndex />
+        </Route>
+        <Route exact path="/fm/admin-approval">
+          <ApprovalIndex />
+        </Route>
+        {/*------------------------- requestor --------------------------- */}
+
+        <Route exact path="/fm/requestor-dashboard">
+          <DashboardIndexSup />
+        </Route>
+        <Route exact path="/fm/requestor-workorders">
+          <WorkordersIndex />
+        </Route>
+        <Route exact path="/fm/requestor-approval">
+          <ApprovalIndex />
+        </Route>
+
+        {/*------------------------- tech --------------------------- */}
+
+        <Route exact path="/fm/asignee-dashboard">
+          <DashboardIndexTech />
+        </Route>
+        <Route exact path="/fm/asignee-workorders">
+          <WorkordersIndexAsignee />
+        </Route>
+        <Route exact path="/fm/supervisor-approval">
+          <ApprovalIndex />
         </Route>
 
       </IonRouterOutlet>

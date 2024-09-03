@@ -145,23 +145,24 @@ const Login = () => {
                 localStorage.setItem('accessToken', access_token);
 
                 // Navigate to the appropriate dashboard based on role
-                switch (role) {
-                    case 'Admin':
-                        history.push('/admin-dashboard');
-                        break;
-                    case 'Supervisor':
-                        history.push('/requestor-dashboard');
-                        break;
-                    case 'Asignee':
-                        history.push('/asignee-dashboard');
-                        break;
-                    case 'Requestor':
-                        history.push('/requestor-dashboard');
-                        break;
-                    default:
-                        setShowAlert(true);
-                        break;
-                }
+                // switch (role) {
+                //     case 'Admin':
+                //         history.push('/admin-dashboard');
+                //         break;
+                //     case 'Supervisor':
+                //         history.push('/requestor-dashboard');
+                //         break;
+                //     case 'Asignee':
+                //         history.push('/asignee-dashboard');
+                //         break;
+                //     case 'Requestor':
+                //         history.push('/requestor-dashboard');
+                //         break;
+                //     default:
+                //         setShowAlert(true);
+                //         break;
+                // }
+                history.push('/main-dashboard');
             } else {
                 setShowAlert(true);
             }

@@ -8,6 +8,7 @@ import Pasta from "../../assets/images/pasta.png";
 import Dessert from "../../assets/images/desserts.png";
 import Bread from "../../assets/images/breads.png";
 import Canteen from "../../assets/images/CANTEEN.png";
+import UserImage from "../../assets/images/user.png";
 
 
 export default {
@@ -19,5 +20,6 @@ export default {
     Pasta,
     Dessert,
     Bread,
-    Canteen
+    Canteen,
+    UserImage
 };

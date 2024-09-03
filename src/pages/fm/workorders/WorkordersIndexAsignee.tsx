@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { IonModal, IonContent, IonHeader, IonToolbar} from '@ionic/react';
-import MasterComponent from '../../components/layouts/MasterComponent';
-import TitleComponent from '../../components/layouts/TitleComponent';
+import MasterComponent from '../../../components/layouts/MasterComponent';
+import TitleComponent from '../../../components/layouts/TitleComponent';
 
 const WorkordersIndexAsignee = () => {
   const [showModal, setShowModal] = useState(false);
@@ -43,7 +43,7 @@ const WorkordersIndexAsignee = () => {
   };
 
   return (
-    <MasterComponent>
+    <MasterComponent page='fm'>
       <TitleComponent title="Work Order History" />
       <div className="row mt-3">
         {workOrders.map((workOrder, index) => (
