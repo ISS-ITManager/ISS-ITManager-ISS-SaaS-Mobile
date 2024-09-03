@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import MasterComponent from '../../components/layouts/MasterComponent'
-import TitleComponent from '../../components/layouts/TitleComponent'
-
+import React, { useState, useEffect } from 'react';
+import MasterComponent from '../../components/layouts/MasterComponent';
+import TitleComponent from '../../components/layouts/TitleComponent';
 import Chart from 'react-apexcharts';
 import { IonContent, IonModal, IonHeader, IonToolbar } from '@ionic/react';
 
 const DashboardIndex = () => {
     const [showModal, setShowModal] = useState(false);
+    const [maintenanceData, setMaintenanceData] = useState(null);
 
     const openModal = () => {
       setShowModal(true);
@@ -15,6 +15,45 @@ const DashboardIndex = () => {
     const closeModal = () => {
       setShowModal(false);
     };
+
+    // Fetch the maintenance prediction data from the API
+    const fetchMaintenanceData = async () => {
+      try {
+        const response = await fetch('http://192.168.25.81:5000/predict', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify([
+            {
+              "name": "Equipment A",
+              "repairs_count": 1,
+              "time_intervals": 2,
+              "equipment_age": 1,
+              "usage_frequency": 1
+            },
+            {
+              "name": "Equipment BA",
+              "repairs_count": 50,
+              "time_intervals": 3,
+              "equipment_age": 50,
+              "usage_frequency": 60
+            }
+          ]),
+        });
+        
+        const data = await response.json();
+        setMaintenanceData(data);
+      } catch (error) {
+        console.error('Error fetching maintenance data:', error);
+      }
+    };
+
+    useEffect(() => {
+      // Call the fetchMaintenanceData function when the component mounts
+      fetchMaintenanceData();
+    }, []);
+
     const options = {
         chart: {
           id: 'monthly-workorders-chart',
@@ -46,15 +85,14 @@ const DashboardIndex = () => {
         grid: {
           borderColor: '#e7e7e7',
         },
-      };
+    };
     
-      const series = [
+    const series = [
         {
           name: 'Work Orders',
           data: [30, 40, 35, 50, 49, 60, 50, 45], // Replace with your actual data
         },
-      ];
-
+    ];
 
     return (
         <MasterComponent>
@@ -66,7 +104,7 @@ const DashboardIndex = () => {
                             <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
                                 <div className="avatar avatar-lg">
                                     <div className="avatar-initial bg-label-primary rounded">
-                                        <h1 className="bx  bx-briefcase mt-3 text-primary" ></h1>
+                                        <h1 className="bx bx-briefcase mt-3 text-primary" ></h1>
                                     </div>
                                 </div>
                                 <div className="content-right">
@@ -94,10 +132,9 @@ const DashboardIndex = () => {
                                 </ul>
                             </div>
                             <div className="text-center">
-                                <button  className='btn btn-primary rounded-pill ' onClick={openModal}>
+                                <button className='btn btn-primary rounded-pill' onClick={openModal}>
                                     <i className='fa fa-plus me-2'></i> Request Work Orders
                                 </button>
-                                    
                             </div>
                         </div>
                     </div>
@@ -105,10 +142,42 @@ const DashboardIndex = () => {
             </div>
             <div className="card">
                 <div className="card-body">
-                <Chart options={options} series={series} type="line" height={350} />
+                    <Chart options={options} series={series} type="line" height={350} />
                 </div>
             </div>
-            <IonModal isOpen={showModal} onDidDismiss={closeModal}>
+
+            {/* Display maintenance data */}
+            {maintenanceData && (
+              <div className="card mt-4">
+                  <div className="card-body">
+                      <h5 className="text-primary fw-bold">Maintenance Predictions</h5>
+                      <ul className="list-group">
+                          {Object.keys(maintenanceData).map(equipment => (
+                              <li
+                                  className="list-group-item"
+                                  key={equipment}
+                                  style={{
+                                      backgroundColor: maintenanceData[equipment].label === "High Maintenance Needed" ? '#ffcccc' : '#ffffcc' // red for high, yellow for low
+                                  }}
+                              >
+                                  <strong>{equipment}</strong>: {maintenanceData[equipment].label}
+                                  <span className="float-start">
+                                      Prone Probability:
+                                      {maintenanceData[equipment].probabilities[0].toFixed(2)} 
+                                  </span>
+                                  <span className="float-end">
+                                      Safe Probability:
+                                      {maintenanceData[equipment].probabilities[1].toFixed(2)} 
+                                  </span>
+                              </li>
+                          ))}
+                      </ul>
+                  </div>
+              </div>
+            )}
+
+
+          <IonModal isOpen={showModal} onDidDismiss={closeModal}>
             <IonHeader>
                 <IonToolbar style={{ '--background': 'transparent', '--border-color': 'transparent', '--ion-toolbar-border-width': '0px' }}>
                     <div className="col-4 mb-3" slot="end">
@@ -205,9 +274,7 @@ const DashboardIndex = () => {
                 </IonContent>
             </IonModal>
         </MasterComponent>
-    )
-}
+    );
+};
 
-
-
-export default DashboardIndex
+export default DashboardIndex;
