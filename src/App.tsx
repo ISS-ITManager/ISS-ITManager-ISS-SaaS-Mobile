@@ -44,13 +44,18 @@ import ApprovalIndex from './pages/fm/approval/ApprovalIndex';
 import DashboardIndexSup from './pages/fm/dashboard/requestor/DashboardIndex';
 import DashboardIndexTech from './pages/fm/dashboard/asignee/DashboardIndex';
 import {MenuProvider} from './functions/MenuContext';
-import IncidentRequest from './pages/itsm/IncidentRequest';
-import AgentChat from './pages/itsm/AgentChat';
+
 
 {/*------------------------- ITSM --------------------------- */}
 import ITSMFAQS from './pages/itsm/faqs/FAQS';
 import ITSMDashboardIndex from './pages/itsm/dashboard/DashboardIndex';
 import ITSMHistory_Request from './pages/itsm/incident_request_history/Incident_Request_History';
+import IncidentRequest from './pages/itsm/IncidentRequest';
+import AgentChat from './pages/itsm/AgentChat';
+
+{/*-------------------------- HRSM --------------------------- */}
+import SubmitFeedback from './pages/hrsm/feedback/FeedBack';
+import PerformanceTrack from './pages/hrsm/performance/PerformanceTrack';
 
 
 setupIonicReact();
@@ -124,17 +129,7 @@ const App: React.FC = () => (
         <Route exact path="/fm/supervisor-approval">
           <ApprovalIndex />
         </Route>
-
-        {/*------------------------- itsm --------------------------- */}
-
-        <Route exact path="/itsm/incident-request">
-          <IncidentRequest />
-        </Route>
-        
-        <Route exact path="/itsm/agent-chat">
-          <AgentChat />
-        </Route>
-
+      
         {/*------------------------- ITSM --------------------------- */}
 
         <Route exact path="/itsm/faqs">
@@ -146,8 +141,20 @@ const App: React.FC = () => (
         <Route exact path="/itsm/incident&request">
           <ITSMHistory_Request />
         </Route>
+        <Route exact path="/itsm/incident-request">
+          <IncidentRequest />
+        </Route>
+        <Route exact path="/itsm/feedback">
+          <AgentChat />
+        </Route>
 
-      
+        {/*------------------------- HR --------------------------- */}
+        <Route exact path="/hrsm/feedback">
+          <SubmitFeedback />
+        </Route>
+        <Route exact path="/hrsm/perfomance-track">
+          <PerformanceTrack />
+        </Route>
 
       </IonRouterOutlet>
     </IonReactRouter>
