@@ -29,3 +29,76 @@ ion-toolbar {
     background: rgb(246,253,255);
     background: linear-gradient(163deg, rgba(246,253,255,1) 0%, rgba(255,239,255,1) 50%, rgba(229,203,255,1) 100%);
 }
+
+.icon-size-24 {
+    font-size: 24pt;
+    align-items: center;
+}
+.message-container {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+  }
+  
+  .message-bubble {
+    position: relative;
+    background: #c4ccf7;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 100%;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform-origin: top left;
+    animation: scaleFromTopLeft 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+  }
+
+  @keyframes scaleFromTopLeft {
+    0% {
+      opacity: 0;
+      transform: scale(0) translate(-100%, -100%);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translate(0, 0);
+    }
+  }
+  
+  .message-bubble.sender {
+    background: #c4ccf7;
+    align-self: flex-start;
+  }
+  
+  .message-bubble.sender::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right-color: #c4ccf7;
+    border-left: 0;
+    border-top: 0;
+    margin-top: -5px;
+  }
+  
+  .message-info {
+    margin-bottom: 5px;
+  }
+  
+  .message-date {
+    font-size: 0.8em;
+    color: #333;
+  }
+  
+  .message-subject {
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .message-content {
+    font-size: 1em;
+    color: #333;
+  }

@@ -41,11 +41,11 @@ import ProfileIndex from './pages/profile/ProfileIndex';
 import WorkordersIndex from './pages/fm/workorders/WorkordersIndex';
 import WorkordersIndexAsignee from './pages/fm/workorders/WorkordersIndexAsignee';
 import ApprovalIndex from './pages/fm/approval/ApprovalIndex';
-
 import DashboardIndexSup from './pages/fm/dashboard/requestor/DashboardIndex';
-
-
 import DashboardIndexTech from './pages/fm/dashboard/asignee/DashboardIndex';
+import {MenuProvider} from './functions/MenuContext';
+import IncidentRequest from './pages/itsm/IncidentRequest';
+import AgentChat from './pages/itsm/AgentChat';
 
 {/*------------------------- ITSM --------------------------- */}
 import ITSMFAQS from './pages/itsm/faqs/FAQS';
@@ -123,6 +123,16 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/fm/supervisor-approval">
           <ApprovalIndex />
+        </Route>
+
+        {/*------------------------- itsm --------------------------- */}
+
+        <Route exact path="/itsm/incident-request">
+          <IncidentRequest />
+        </Route>
+        
+        <Route exact path="/itsm/agent-chat">
+          <AgentChat />
         </Route>
 
         {/*------------------------- ITSM --------------------------- */}
