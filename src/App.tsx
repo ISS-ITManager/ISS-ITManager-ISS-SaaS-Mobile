@@ -47,6 +47,11 @@ import DashboardIndexSup from './pages/fm/dashboard/requestor/DashboardIndex';
 
 import DashboardIndexTech from './pages/fm/dashboard/asignee/DashboardIndex';
 
+{/*------------------------- ITSM --------------------------- */}
+import ITSMFAQS from './pages/itsm/faqs/FAQS';
+import ITSMDashboardIndex from './pages/itsm/dashboard/DashboardIndex';
+import ITSMHistory_Request from './pages/itsm/incident_request_history/Incident_Request_History';
+
 
 setupIonicReact();
 
@@ -119,6 +124,20 @@ const App: React.FC = () => (
         <Route exact path="/fm/supervisor-approval">
           <ApprovalIndex />
         </Route>
+
+        {/*------------------------- ITSM --------------------------- */}
+
+        <Route exact path="/itsm/faqs">
+          <ITSMFAQS />
+        </Route>
+        <Route exact path="/itsm/dashboard">
+          <ITSMDashboardIndex />
+        </Route>
+        <Route exact path="/itsm/incident&request">
+          <ITSMHistory_Request />
+        </Route>
+
+      
 
       </IonRouterOutlet>
     </IonReactRouter>
