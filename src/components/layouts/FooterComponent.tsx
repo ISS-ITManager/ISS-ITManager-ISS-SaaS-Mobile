@@ -155,11 +155,6 @@ const FooterComponent = ({ module }) => {
     const navigateTo = (path) => {
         history.push(path);
     };
-    useEffect(() => {
-        console.log("currentModule: " + module);
-
-    }, [])
-
     return (
         <IonFooter className='text-center'>
             <div className="bg-light">

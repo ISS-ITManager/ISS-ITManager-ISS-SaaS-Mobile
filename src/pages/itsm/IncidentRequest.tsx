@@ -167,7 +167,7 @@ const IncidentRequest = ({ type }) => {
             <div className="row mt-3">
               <div className="col-8 ">
                 <h5 className='text-primary fw-bold'>
-                  <i className='fa fa-plus'></i> {type} Create Incident
+                  <i className='fa fa-plus'></i> {currentAction} Incident
                 </h5>
               </div>
               <div className="col-12">
@@ -175,11 +175,11 @@ const IncidentRequest = ({ type }) => {
                   <div className="card-body">
                     <div className="row mb-3">
                       <div className="col-md-12">
-                        <b className="text-info">Incident Details</b>
+                        <b className="text-info">{currentAction} Details</b>
                       </div>
                       <div className="col-12">
-                        <label htmlFor="">Incident Number </label>
-                        <input type="text" className="form-control" name="" id="" value={"IN12323"} />
+                        <label htmlFor="">{currentAction} Number </label>
+                        <input type="text" className="form-control" name="" id="" value={ currentAction === "Request"? "REQ12323": "IN12323"} />
                       </div>
                       <div className="col-12">
                         <label htmlFor="">Subject</label>
@@ -217,7 +217,7 @@ const IncidentRequest = ({ type }) => {
                         <input type="text" className="form-control" name="" id="" />
                       </div>
                       <div className="col-md-4 mb-2">
-                        <label htmlFor="">Incident Type</label>
+                        <label htmlFor="">{currentAction} Type</label>
                         <select name="#" id="" className="form-control select2">
                           <option>Select Type </option>
                           <option value="#">Bug</option>
@@ -285,7 +285,7 @@ const IncidentRequest = ({ type }) => {
                       </div>
                       <div className="col-md-4 mb-2">
                         <label htmlFor="">Assignment Date</label>
-                        <input type="text" className="form-control" name="" id="" value={Date()} />
+                        <input type="date" className="form-control" name="" id="" value={Date()} />
                       </div>
                       <div className="col-md-4 mb-2">
                         <label htmlFor="">Incident Type</label>
