@@ -43,15 +43,15 @@ import WorkordersIndexAsignee from './pages/fm/workorders/WorkordersIndexAsignee
 import ApprovalIndex from './pages/fm/approval/ApprovalIndex';
 import DashboardIndexSup from './pages/fm/dashboard/requestor/DashboardIndex';
 import DashboardIndexTech from './pages/fm/dashboard/asignee/DashboardIndex';
-{/*------------------------- ITSM --------------------------- */ }
-import { MenuProvider } from './functions/MenuContext';
-import IncidentRequest from './pages/itsm/IncidentRequest';
-import AgentChat from './pages/itsm/AgentChat';
+
+
+{/*------------------------- ITSM --------------------------- */}
 import ITSMFAQS from './pages/itsm/faqs/FAQS';
 import ITSMDashboardIndex from './pages/itsm/dashboard/DashboardIndex';
 import ITSMHistory_Request from './pages/itsm/incident_request_history/Incident_Request_History';
-import HRAttendance from './pages/hrsm/HRAttendance';
-import HRLeaveLetter from './pages/hrsm/HRLeaveLetter';
+
+import IncidentRequest from './pages/itsm/IncidentRequest';
+import AgentChat from './pages/itsm/AgentChat';
 
 
 setupIonicReact();
@@ -125,6 +125,7 @@ const App: React.FC = () => (
           <ApprovalIndex />
         </Route>
 
+      
         {/*------------------------- ITSM --------------------------- */}
 
         <Route exact path="/itsm/faqs">
@@ -137,22 +138,15 @@ const App: React.FC = () => (
           <ITSMHistory_Request />
         </Route>
 
+      
+        {/*------------------------- itsm --------------------------- */}
+
         <Route exact path="/itsm/incident-request">
           <IncidentRequest />
         </Route>
-
+        
         <Route exact path="/itsm/agent-chat">
           <AgentChat />
-        </Route>
-
-        {/*------------------------- HRSM --------------------------- */}
-
-        <Route exact path="/hrsm/attendance">
-          <HRAttendance />
-        </Route>
-
-        <Route exact path="/hrsm/letter-leave">
-          <HRLeaveLetter />
         </Route>
 
       </IonRouterOutlet>
