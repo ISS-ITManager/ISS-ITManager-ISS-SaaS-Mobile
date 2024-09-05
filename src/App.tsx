@@ -43,9 +43,14 @@ import WorkordersIndexAsignee from './pages/fm/workorders/WorkordersIndexAsignee
 import ApprovalIndex from './pages/fm/approval/ApprovalIndex';
 import DashboardIndexSup from './pages/fm/dashboard/requestor/DashboardIndex';
 import DashboardIndexTech from './pages/fm/dashboard/asignee/DashboardIndex';
+{/*------------------------- ITSM --------------------------- */}
 import {MenuProvider} from './functions/MenuContext';
 import IncidentRequest from './pages/itsm/IncidentRequest';
 import AgentChat from './pages/itsm/AgentChat';
+import ITSMFAQS from './pages/itsm/faqs/FAQS';
+import ITSMDashboardIndex from './pages/itsm/dashboard/DashboardIndex';
+import ITSMHistory_Request from './pages/itsm/incident_request_history/Incident_Request_History';
+
 
 setupIonicReact();
 
@@ -119,12 +124,23 @@ const App: React.FC = () => (
           <ApprovalIndex />
         </Route>
 
-        {/*------------------------- itsm --------------------------- */}
+        {/*------------------------- ITSM --------------------------- */}
+
+        <Route exact path="/itsm/faqs">
+          <ITSMFAQS />
+        </Route>
+        <Route exact path="/itsm/dashboard">
+          <ITSMDashboardIndex />
+        </Route>
+        <Route exact path="/itsm/incident&request">
+          <ITSMHistory_Request />
+        </Route>
 
         <Route exact path="/itsm/incident-request">
           <IncidentRequest />
         </Route>
         
+
         <Route exact path="/itsm/agent-chat">
           <AgentChat />
         </Route>
