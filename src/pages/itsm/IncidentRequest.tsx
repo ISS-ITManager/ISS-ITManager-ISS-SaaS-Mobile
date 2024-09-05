@@ -41,7 +41,6 @@ const IncidentRequest = ({ type }) => {
                   <p className="mb-0 fw-medium" > Incident </p>
                 </div>
               </div>
-
             </div>
           </div>
 
@@ -223,10 +222,9 @@ const IncidentRequest = ({ type }) => {
                           <option value="#">Security Breach</option>
                         </select>
                       </div>
-
-                      <div className="col-md-4 mb-2 mt-5">
-                        <button className='btn w-100 btn-primary btn-lg rounded-pill' >
-                          Create
+                      <div className="col-12 text-center mt-3">
+                        <button className='btn btn-primary rounded-pill' >
+                          <i className='bx bx-save me-2'></i> Create
                         </button>
                       </div>
                     </div>
@@ -301,9 +299,9 @@ const IncidentRequest = ({ type }) => {
                         <input type="text" className="form-control" name="" id="" />
                       </div>
                     </div>
-                    <div className="col-md-4 mb-2">
-                      <button className='btn w-100 btn-primary btn-lg rounded-pill' >
-                        Save
+                    <div className="col-12 text-center mt-3">
+                      <button className='btn btn-primary rounded-pill'>
+                        <i className='bx bx-save me-2'></i> Save
                       </button>
                     </div>
 
@@ -321,7 +319,7 @@ const IncidentRequest = ({ type }) => {
           <IonToolbar style={{ '--background': 'transparent', '--border-color': 'transparent', '--ion-toolbar-border-width': '0px' }}>
 
             <div className="col-4 mb-3" slot="end">
-              <button className='btn mt-2 btn-primary float-end rounded-pill' onClick={() => {setShowTrack(false); setShowResults(false)}}>
+              <button className='btn mt-2 btn-primary float-end rounded-pill' onClick={() => { setShowTrack(false); setShowResults(false) }}>
                 <i className='fa fa-times'></i>
               </button>
             </div>
@@ -357,20 +355,22 @@ const IncidentRequest = ({ type }) => {
                       </div>
 
                     </div>
-                    <div className="col-md-4 mb-2">
-                      <button className='btn w-30 btn-primary btn-lg rounded-pill' onClick={() => setShowResults(true)} >
-                        Search
+                    <div className="col-12 mt-3">
+                      <button className='btn btn-primary rounded-pill' onClick={() => setShowResults(true)}>
+                        <i className='bx bx-search me-2'></i> Search
                       </button>
-                      <button className='btn w-30 btn-secondary btn-lg rounded-pill' onClick={() => setShowResults(false)} >
-                        Clear
+
+                      <button className='btn btn-secondary rounded-pill' onClick={() => setShowResults(false)}>
+                        <i></i> Cancel
                       </button>
                     </div>
+
                   </div>
                 </div>
 
                 {showResults &&
                   <div className="card border border-light mt-3">
-                  <TitleComponent title={`${currentAction} Results`}/>
+                    <TitleComponent title={`${currentAction} Results`} />
                     <div className="card-body">
                       <div className="row mb-3">
                         <div className="col-md-4 mb-2">
@@ -383,7 +383,7 @@ const IncidentRequest = ({ type }) => {
                         </div>
                         <div className="col-md-4 mb-2">
                           <label htmlFor="">Description</label>
-                          <textarea  className='form-control' value="orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."></textarea >
+                          <textarea className='form-control' value="orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."></textarea >
                         </div>
                         <div className="col-md-4 mb-2">
                           <label htmlFor="">Resolution Date/Time</label>
@@ -399,15 +399,15 @@ const IncidentRequest = ({ type }) => {
                         </div>
                         <div className="col-md-4 mb-2">
                           <label htmlFor="">Root Cause Analysis</label>
-                          <textarea  className='form-control' value="orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."></textarea >
+                          <textarea className='form-control' value="orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."></textarea >
                         </div>
                         <div className="col-md-4 mb-2">
                           <label htmlFor="">Resolution Details</label>
-                          <textarea  className='form-control' value="orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."></textarea >
+                          <textarea className='form-control' value="orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."></textarea >
                         </div>
                         <div className="col-md-4 mb-2">
                           <label htmlFor="">Impact Assessment</label>
-                          <textarea  className='form-control' value="orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."></textarea >
+                          <textarea className='form-control' value="orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."></textarea >
                         </div>
 
                       </div>

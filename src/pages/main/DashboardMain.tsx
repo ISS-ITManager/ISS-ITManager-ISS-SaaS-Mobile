@@ -20,7 +20,7 @@ const DashboardMain = () => {
                             <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
                                 <div className="avatar avatar-lg">
                                     <div className="avatar-initial bg-label-primary rounded">
-                                        <h1 className="bx bx-briefcase mt-3 text-primary" ></h1>
+                                        <i className="bx bx-briefcase text-primary icon-size-24" ></i>
                                     </div>
                                 </div>
                                 <div className="content-right">
@@ -36,7 +36,7 @@ const DashboardMain = () => {
                             <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
                                 <div className="avatar avatar-lg">
                                     <div className="avatar-initial bg-label-primary rounded">
-                                        <h1 className="bx bx-buildings mt-3 text-primary" ></h1>
+                                        <i className="bx bx-buildings text-primary icon-size-24 " ></i>
                                     </div>
                                 </div>
                                 <div className="content-right">
@@ -52,7 +52,7 @@ const DashboardMain = () => {
                             <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
                                 <div className="avatar avatar-lg">
                                     <div className="avatar-initial bg-label-primary rounded">
-                                        <h1 className="bx bx-group mt-3 text-primary" ></h1>
+                                        <i className="bx bx-group text-primary icon-size-24" ></i>
                                     </div>
                                 </div>
                                 <div className="content-right">
