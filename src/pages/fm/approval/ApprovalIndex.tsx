@@ -18,7 +18,7 @@ const ApprovalIndex = () => {
     };
     return (
         <MasterComponent page="fm">
-            <TitleComponent title={"For Approval"} />
+            <TitleComponent title="FM" subtitle={"For Approval"} />
           
             <div className="card border border-light mb-3 animate__animated animate__bounceInRight">
                 <div className="card-header">

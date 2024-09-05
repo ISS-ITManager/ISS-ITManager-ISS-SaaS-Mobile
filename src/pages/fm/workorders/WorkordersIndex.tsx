@@ -87,7 +87,7 @@ const WorkordersIndex = () => {
 
     return (
         <MasterComponent page='fm'>
-            <TitleComponent title={"Work Orders"} />
+            <TitleComponent title="FM" subtitle={"Work Orders"} />
 
             <div className="card border border-light mb-3 animate__animated animate__bounceInLeft">
                 <div className="card-body">

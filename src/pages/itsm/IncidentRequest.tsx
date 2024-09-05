@@ -5,7 +5,7 @@ import MasterComponent from '../../components/layouts/MasterComponent';
 import TitleComponent from '../../components/layouts/TitleComponent';
 import useGoToPage from '../../functions/useGoToPage';
 
-const IncidentRequest = ({ type }) => {
+const IncidentRequest = () => {
   const randomInc = "IR" + Math.floor(Math.random() * 100);
   const [showModal, setShowModal] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
@@ -13,13 +13,12 @@ const IncidentRequest = ({ type }) => {
   const [showTrack, setShowTrack] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [currentAction, setCurrentAction] = useState("");
-  const openOptions = () => {
-    console.log("open options");
-  }
+
   const goToPage = useGoToPage();
 
   return (
     <MasterComponent page="itsm">
+      <TitleComponent title={"ITMS"} subtitle="Incident & Request" />
 
       <div className="row mb-3 ">
         <div className="col-12 mb-3">
@@ -63,9 +62,10 @@ const IncidentRequest = ({ type }) => {
 
             </div>
           </div>
-          
+
           <div className="card border border-light mt-3 animate__animated animate__bounceInLeft"
-            onClick={() => {goToPage('/itsm/incident&request')
+            onClick={() => {
+              goToPage('/itsm/incident&request')
             }}>
             <div className="card-body">
               <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
@@ -179,7 +179,7 @@ const IncidentRequest = ({ type }) => {
                       </div>
                       <div className="col-12">
                         <label htmlFor="">{currentAction} Number </label>
-                        <input type="text" className="form-control" name="" id="" value={ currentAction === "Request"? "REQ12323": "IN12323"} />
+                        <input type="text" className="form-control" name="" id="" value={currentAction === "Request" ? "REQ12323" : "IN12323"} />
                       </div>
                       <div className="col-12">
                         <label htmlFor="">Subject</label>
@@ -257,7 +257,7 @@ const IncidentRequest = ({ type }) => {
             <div className="row mt-3">
               <div className="col-8 ">
                 <h5 className='text-primary fw-bold'>
-                  <i className='fa fa-arrow-right'></i> {type} Assign {currentAction}
+                  <i className='fa fa-arrow-right'></i>Assign {currentAction}
                 </h5>
               </div>
               <div className="col-12">
@@ -333,7 +333,7 @@ const IncidentRequest = ({ type }) => {
             <div className="row mt-3">
               <div className="col-8 ">
                 <h5 className='text-primary fw-bold'>
-                  <i className='fa fa-location-crosshairs'></i> {type} Track {currentAction}
+                  <i className='fa fa-location-crosshairs'></i> Track {currentAction}
                 </h5>
               </div>
               <div className="col-12">

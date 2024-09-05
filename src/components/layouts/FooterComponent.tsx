@@ -145,10 +145,10 @@ const FooterComponent = ({ module }) => {
     let currentPage = location.pathname;
 
     // Determine active path based on user role
-    const isDashboardPage = location.pathname === '/admin-dashboard'; //(userRole === 'Asignee' ? '/asignee-dashboard' : userRole === 'Requestor' ? '/requestor-dashboard' : '/admin-dashboard');
-    const isWorkorderPage = location.pathname === '/admin-workorders';//(userRole === 'Requestor' || userRole === 'Admin' ? '/admin-workorders' : '/asignee-workorders');
-    const isApprovalPage = location.pathname === '/admin-approval'; //(userRole === 'Requestor' || userRole === 'Admin' ? '/admin-approval' : '/asignee-approval');
-    const isProfilePage = location.pathname === '/profile';
+    // const isDashboardPage = location.pathname === '/admin-dashboard'; //(userRole === 'Asignee' ? '/asignee-dashboard' : userRole === 'Requestor' ? '/requestor-dashboard' : '/admin-dashboard');
+    // const isWorkorderPage = location.pathname === '/admin-workorders';//(userRole === 'Requestor' || userRole === 'Admin' ? '/admin-workorders' : '/asignee-workorders');
+    // const isApprovalPage = location.pathname === '/admin-approval'; //(userRole === 'Requestor' || userRole === 'Admin' ? '/admin-approval' : '/asignee-approval');
+    // const isProfilePage = location.pathname === '/profile';
 
 
     // Navigate to the specified path
@@ -162,8 +162,8 @@ const FooterComponent = ({ module }) => {
                     <div className={`row pt-3 ${userRole === 'Asignee' ? 'justify-content-center' : ''}`}>
                         <>
                             <div className="mb-3 col-4 text-center" onClick={() => navigateTo('/fm/admin-dashboard')}>
-                                <i className={`footer-icon bx bxs-dashboard ${currentPage === '/fm/admin-dashboard' || '/fm' ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
-                                <span className={`badge badge-dot ${currentPage === '/fm/admin-dashboard' || '/fm' ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
+                                <i className={`footer-icon bx bxs-dashboard ${(currentPage === '/fm/admin-dashboard' || currentPage === '/fm')  ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
+                                <span className={`badge badge-dot ${(currentPage === '/fm/admin-dashboard' || currentPage === '/fm') ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
                             </div>
                             <div className="mb-3 col-4 text-center" onClick={() => navigateTo('/fm/admin-workorders')}>
                                 <i className={`footer-icon bx bx-briefcase ${currentPage === '/fm/admin-workorders' ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
@@ -231,24 +231,19 @@ const FooterComponent = ({ module }) => {
                 {module === "itsm" &&
                     <>
                         <div className={`row pt-3`}>
-                            <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/itsm/dashboard')}>
+                            <div className="mb-3 col-4 text-center" onClick={() => navigateTo('/itsm/dashboard')}>
                                 <i className={`footer-icon bx bxs-dashboard ${currentPage === '/itsm/dashboard' ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
                                 <span className={`badge badge-dot ${currentPage === '/itsm/dashboard' ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
                             </div>
 
-                            <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/itsm/incident-request')}>
+                            <div className="mb-3 col-4 text-center" onClick={() => navigateTo('/itsm/incident-request')}>
                                 <i className={`footer-icon bx bxs-notepad ${currentPage === '/itsm/incident-request' ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
                                 <span className={`badge badge-dot ${currentPage === '/itsm/incident-request' ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
                             </div>
 
-                            <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/itsm/faqs')}>
+                            <div className="mb-3 col-4 text-center" onClick={() => navigateTo('/itsm/faqs')}>
                                 <i className={`footer-icon bx bxs-book-reader ${currentPage === '/itsm/faqs' ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
                                 <span className={`badge badge-dot ${currentPage === '/itsm/faqs' ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
-                            </div>
-
-                            <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/itsm/agent-chat')}>
-                                <i className={`footer-icon bx bxs-chat ${currentPage === '/itsm/agent-chat' ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
-                                <span className={`badge badge-dot ${currentPage === '/itsm/agent-chat' ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
                             </div>
                         </div>
                     </>
@@ -269,13 +264,18 @@ const FooterComponent = ({ module }) => {
                             </div>
 
                             <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/hrsm/letter-leave')}>
-                                <i className={`footer-icon bx bxs-file ${currentPage === '/hrsm/letter-leave' ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
-                                <span className={`badge badge-dot ${currentPage === '/hrsm/letter-leave' ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
+                                <i className={`footer-icon bx bxs-file ${(currentPage === '/hrsm/letter-leave' || currentPage === '/hrsm/employee-feedback') ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
+                                <span className={`badge badge-dot ${(currentPage === '/hrsm/letter-leave' || currentPage === '/hrsm/employee-feedback') ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
                             </div>
 
-                            <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/itsm/agent-chat')}>
-                                <i className={`footer-icon bx bxs-location ${currentPage === '/itsm/agent-chat' ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
-                                <span className={`badge badge-dot ${currentPage === '/itsm/agent-chat' ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
+                            <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/hrsm/employee-tracking')}>
+                                <i className={`footer-icon bx bxs-location-plus ${currentPage === '/hrsm/employee-tracking' ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
+                                <span className={`badge badge-dot ${currentPage === '/hrsm/employee-tracking' ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
+                            </div>
+
+                            <div className="mb-3 col-3 text-center" onClick={() => navigateTo('/hrsm/employee-performance')}>
+                                <i className={`footer-icon bx bxs-objects-vertical-bottom ${currentPage === '/hrsmemployee-performance' ? 'animate__animated animate__rubberBand' : ''}`}></i> <br />
+                                <span className={`badge badge-dot ${currentPage === '/hrsm/employee-performance' ? 'bg-primary animate__animated animate__wobble' : ''}`}></span>
                             </div>
                         </div>
                     </>

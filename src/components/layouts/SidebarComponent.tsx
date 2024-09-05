@@ -8,6 +8,7 @@ import { useMenu } from '../../functions/MenuContext';
 const SidebarComponent = ({ module }) => {
     const goToPage = useGoToPage();
     const menuRef = useRef<HTMLIonMenuElement>(null);
+    const [currentModule, setCurrentModule] = useState(module);
 
     useIonViewWillLeave(() => {
         if (menuRef.current) {
@@ -21,11 +22,18 @@ const SidebarComponent = ({ module }) => {
         }
         goToPage('/login');
     };
-    
+
     useEffect(() => {
-        console.log("module: " + module);
+        setCurrentModule(module);
 
     }, [])
+
+    const handleSelectItem = (path) => {
+        goToPage(path);
+        if (menuRef.current) {
+            menuRef.current.close();
+        }
+    }
 
     return (
         <IonMenu side="start" contentId="main-content" menuId="main-menu" ref={menuRef}>
@@ -47,19 +55,31 @@ const SidebarComponent = ({ module }) => {
                     </IonRow>
                 </IonGrid>
                 <IonList lines="none" className='bg'>
-                    <IonItem onClick={() => goToPage('/main-dashboard')}>
+                    <IonItem onClick={() => handleSelectItem('/main-dashboard')}>
                         {module === "main" ? <span className='badge bg-primary rounded-pill animate__animated animate__rubberBand'><i className='bx bx-globe me-2'></i>Home</span> : <a className='ms-2'><i className='bx bx-globe me-2'></i>HOME </a>}
 
                     </IonItem>
-                    <IonItem onClick={() => goToPage('/itsm/dashboard')}>
+                    <IonItem onClick={() => handleSelectItem('/itsm/dashboard')}>
                         {module === "itsm" ? <span className='badge bg-primary rounded-pill animate__animated animate__rubberBand'><i className='bx bx-globe me-2'></i>ITSM</span> :
                             <a className='ms-2'><i className='bx bx-briefcase me-2'></i>ITSM </a>}
                     </IonItem>
-                    <IonItem onClick={() => goToPage('/fm')}>
+                    <IonItem onClick={() => handleSelectItem('/fm')}>
                         {module === "fm" ? <span className='badge bg-primary rounded-pill animate__animated animate__rubberBand'><i className='bx bx-globe me-2'></i>FM</span> : <a className='ms-2'><i className='bx bx-buildings me-2'></i>FM </a>}
                     </IonItem>
-                    <IonItem onClick={() => goToPage('/hrsm/attendance')}>
+                    <IonItem onClick={() => handleSelectItem('/hrsm/attendance')}>
                         {module === "hrsm" ? <span className='badge bg-primary rounded-pill animate__animated animate__rubberBand'><i className='bx bx-globe me-2'></i>HRSM</span> : <a className='ms-2'><i className='bx bx-group me-2'></i>HRSM </a>}
+                    </IonItem>
+                </IonList>
+                <IonGrid>
+                    <IonRow className='mt-3'>
+                        <IonCol>
+                            <span className="text-muted text-uppercase">Support</span>
+                        </IonCol>
+                    </IonRow>
+                </IonGrid>
+                <IonList lines="none" className='bg'>
+                    <IonItem onClick={() => handleSelectItem('/agent-chat')}>
+                        <a className='ms-2'><i className='bx bx-support me-2'></i>Agent Chat</a>
                     </IonItem>
                 </IonList>
                 <IonGrid>
@@ -70,7 +90,7 @@ const SidebarComponent = ({ module }) => {
                     </IonRow>
                 </IonGrid>
                 <IonList lines="none" className='bg'>
-                    <IonItem onClick={() => goToPage('/profile')}>
+                    <IonItem onClick={() => handleSelectItem('/profile')}>
                         <a className='ms-2'><i className='bx bx-user me-2'></i>Profile </a>
                     </IonItem>
                     <IonItem onClick={handleLogout}>

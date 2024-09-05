@@ -49,10 +49,15 @@ import DashboardIndexTech from './pages/fm/dashboard/asignee/DashboardIndex';
 import ITSMFAQS from './pages/itsm/faqs/FAQS';
 import ITSMDashboardIndex from './pages/itsm/dashboard/DashboardIndex';
 import ITSMHistory_Request from './pages/itsm/incident_request_history/Incident_Request_History';
-
 import IncidentRequest from './pages/itsm/IncidentRequest';
 import AgentChat from './pages/itsm/AgentChat';
 
+{/*------------------------- HRSM --------------------------- */}
+import HRAttendance from './pages/hrsm/HRAttendance';
+import HRLeaveLetter from './pages/hrsm/HRLeaveLetter';
+import Tracking from './pages/hrsm/employee/Tracking';
+import Feedback from './pages/hrsm/feedback/FeedBack';
+import PerformanceTrack from './pages/hrsm/performance/PerformanceTrack';
 
 setupIonicReact();
 
@@ -84,6 +89,9 @@ const App: React.FC = () => (
           <DashboardMain />
         </Route>
 
+        <Route exact path="/agent-chat">
+          <AgentChat />
+        </Route>
 
         {/*------------------------- fm --------------------------- */}
         <Route exact path="/fm" >
@@ -138,16 +146,29 @@ const App: React.FC = () => (
           <ITSMHistory_Request />
         </Route>
 
-      
-        {/*------------------------- itsm --------------------------- */}
-
-        <Route exact path="/itsm/incident-request">
+       <Route exact path="/itsm/incident-request">
           <IncidentRequest />
         </Route>
         
-        <Route exact path="/itsm/agent-chat">
-          <AgentChat />
+
+        {/*------------------------- HRSM --------------------------- */}
+        <Route exact path="/hrsm/attendance">
+          <HRAttendance />
         </Route>
+        <Route exact path="/hrsm/letter-leave">
+          <HRLeaveLetter />
+        </Route>
+        <Route exact path="/hrsm/employee-tracking">
+          <Tracking />
+        </Route>
+        <Route exact path="/hrsm/employee-feedback">
+          <Feedback />
+        </Route>
+        <Route exact path="/hrsm/employee-performance">
+          <PerformanceTrack />
+        </Route>
+
+
 
       </IonRouterOutlet>
     </IonReactRouter>

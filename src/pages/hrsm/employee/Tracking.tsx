@@ -92,8 +92,8 @@ const Tracking: React.FC = () => {
   }, [isTracking]);
 
   return (
-    <MasterComponent page="employee-tracking">
-      <TitleComponent title="Employee Task Tracking" />
+    <MasterComponent page="hrsm">
+      <TitleComponent title="HRSM" subtitle="Employee Task Tracking" />
       <div className="container mt-4 text-center">
         {!taskStarted && (
           <>

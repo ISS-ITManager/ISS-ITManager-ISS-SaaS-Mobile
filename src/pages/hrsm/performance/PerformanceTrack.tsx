@@ -24,8 +24,8 @@ const PerformanceTrack: React.FC = () => {
     const toggleView = () => setShowMetrics(prevShowMetrics => !prevShowMetrics);
 
     return (
-        <MasterComponent page="performance">
-            <TitleComponent title="Performance Tracking" />
+        <MasterComponent page="hrsm">
+            <TitleComponent title="HRSM" subtitle="Performance Tracking" />
             <div className="container mt-4">
 
                 <div className="d-flex justify-content-end mb-3">

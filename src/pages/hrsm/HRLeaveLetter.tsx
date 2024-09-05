@@ -17,27 +17,27 @@ const HRLeaveLetter = () => {
   const goToPage = useGoToPage();
   return (
     <MasterComponent page="hrsm">
-      <TitleComponent title="HR Service Management" />
+      <TitleComponent title="HRSM" subtitle="Feedback, Leave, Letter" />
       <IonContent className='ion-padding'>
 
         <div className="row mb-3 ">
           <div className="col-12 mb-3">
-            {/* <div className="card border border-light mb-3 animate__animated animate__bounceInRight"
-              onClick={() => goToPage("/hrsm/attendance")}>
+            <div className="card border border-light mb-3 animate__animated animate__bounceInRight"
+              onClick={() => goToPage("/hrsm/employee-feedback")}>
               <div className="card-body">
                 <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
                   <div className="avatar avatar-lg">
                     <div className="avatar-initial bg-label-primary rounded">
-                      <i className="bx bx-time text-primary icon-size-24 " ></i>
+                      <i className="bx bx-edit text-primary icon-size-24 " ></i> 
                     </div>
                   </div>
                   <div className="content-right">
-                    <p className="mb-0 fw-medium"> Attendance </p>
+                    <p className="mb-0 fw-medium"> Employee Feedback </p>
                   </div>
                 </div>
 
               </div>
-            </div> */}
+            </div>
 
             <div className="card border border-light animate__animated animate__bounceInLeft"
               onClick={() => {

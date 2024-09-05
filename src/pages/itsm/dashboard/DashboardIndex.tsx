@@ -70,7 +70,7 @@ const Dashboard = () => {
 
     return (
         <MasterComponent page='itsm'>
-            <TitleComponent title="IT Management Dashboard" />
+            <TitleComponent title="ITSM " subtitle={"Dashboard"} />
             <div className="container mt-4">
                 {/* Overview Metrics */}
                 <div className="row">

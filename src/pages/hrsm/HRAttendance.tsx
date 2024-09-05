@@ -10,7 +10,7 @@ const HRAttendance = () => {
   },[])
   return (
     <MasterComponent page="hrsm">
-      <TitleComponent title="HR Attendance" />
+      <TitleComponent title="HRSM" subtitle="HR Attendance" />
       <IonContent className='ion-padding'>
         <div className="card border border-light mb-3 animate__animated animate__bounceInRight">
           <div className="card-body">

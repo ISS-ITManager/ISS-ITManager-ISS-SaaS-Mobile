@@ -1,10 +1,12 @@
 
 
 import MasterComponent from '../../components/layouts/MasterComponent'
+import TitleComponent from '../../components/layouts/TitleComponent';
 
 const AgentChat = () => {
   return (
-    <MasterComponent page="itsm">
+    <MasterComponent page="home">
+      <TitleComponent title={"Agent Chat"} />
       <div className="message-container">
         <div className="message-bubble sender">
           <div className="message-info">
