@@ -19,7 +19,7 @@ const DashboardIndex = () => {
     // Fetch the maintenance prediction data from the API
     const fetchMaintenanceData = async () => {
       try {
-        const response = await fetch('http://192.168.25.81:5000/predict', {
+        const response = await fetch('http://127.0.0.1:5000/predict',{ //'http://192.168.25.81:5000/predict', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

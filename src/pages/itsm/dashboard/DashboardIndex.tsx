@@ -69,7 +69,7 @@ const Dashboard = () => {
     const systemHealthSeries = [99, 98, 95];
 
     return (
-        <MasterComponent page='dashboard'>
+        <MasterComponent page='itsm'>
             <TitleComponent title="IT Management Dashboard" />
             <div className="container mt-4">
                 {/* Overview Metrics */}

@@ -1,19 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState, useContext, createContext, useImperativeHandle } from 'react';
 import { IonContent, IonGrid, IonMenu, useIonViewWillLeave, IonRow, IonCol, IonList, IonItem, IonSelect, IonSelectOption } from '@ionic/react';
 import Image from '../constants/Image';
 import useGoToPage from '../../functions/useGoToPage';
+import { useMenu } from '../../functions/MenuContext';
 
-const SidebarComponent = () => {
+
+const SidebarComponent = ({ module }) => {
     const goToPage = useGoToPage();
-    let ionMenuRef = React.useRef(null);
+    const menuRef = useRef<HTMLIonMenuElement>(null);
 
     useIonViewWillLeave(() => {
-        if (ionMenuRef.current) {
-            ionMenuRef.current.close();
+        if (menuRef.current) {
+            menuRef.current.close();
         }
     });
+
+    const handleLogout = () => {
+        if (menuRef.current) {
+            menuRef.current.close();
+        }
+        goToPage('/login');
+    };
+    
+    useEffect(() => {
+        console.log("module: " + module);
+
+    }, [])
+
     return (
-        <IonMenu side='start' contentId="main-content" ref={ionMenuRef}>
+        <IonMenu side="start" contentId="main-content" menuId="main-menu" ref={menuRef}>
             <IonContent className='ion-padding'>
                 <IonGrid>
                     <IonRow className='mt-5'>
@@ -33,16 +48,18 @@ const SidebarComponent = () => {
                 </IonGrid>
                 <IonList lines="none" className='bg'>
                     <IonItem onClick={() => goToPage('/main-dashboard')}>
-                        <a className='ms-2'><i className='bx bx-globe me-2'></i>HOME </a>
+                        {module === "main" ? <span className='badge bg-primary rounded-pill animate__animated animate__rubberBand'><i className='bx bx-globe me-2'></i>Home</span> : <a className='ms-2'><i className='bx bx-globe me-2'></i>HOME </a>}
+
                     </IonItem>
-                    <IonItem onClick={() => goToPage('/theme')}>
-                        <a className='ms-2'><i className='bx bx-briefcase me-2'></i>ITSM </a>
+                    <IonItem onClick={() => goToPage('/itsm/dashboard')}>
+                        {module === "itsm" ? <span className='badge bg-primary rounded-pill animate__animated animate__rubberBand'><i className='bx bx-globe me-2'></i>ITSM</span> :
+                            <a className='ms-2'><i className='bx bx-briefcase me-2'></i>ITSM </a>}
                     </IonItem>
                     <IonItem onClick={() => goToPage('/fm')}>
-                        <a className='ms-2'><i className='bx bx-buildings me-2'></i>FM </a>
+                        {module === "fm" ? <span className='badge bg-primary rounded-pill animate__animated animate__rubberBand'><i className='bx bx-globe me-2'></i>FM</span> : <a className='ms-2'><i className='bx bx-buildings me-2'></i>FM </a>}
                     </IonItem>
-                    <IonItem>
-                        <a className='ms-2'><i className='bx bx-group me-2'></i>HRSM </a>
+                    <IonItem onClick={() => goToPage('/hrsm/attendance')}>
+                        {module === "hrsm" ? <span className='badge bg-primary rounded-pill animate__animated animate__rubberBand'><i className='bx bx-globe me-2'></i>HRSM</span> : <a className='ms-2'><i className='bx bx-group me-2'></i>HRSM </a>}
                     </IonItem>
                 </IonList>
                 <IonGrid>
@@ -55,6 +72,9 @@ const SidebarComponent = () => {
                 <IonList lines="none" className='bg'>
                     <IonItem onClick={() => goToPage('/profile')}>
                         <a className='ms-2'><i className='bx bx-user me-2'></i>Profile </a>
+                    </IonItem>
+                    <IonItem onClick={handleLogout}>
+                        <a className='ms-2'><i className='bx bx-power-off me-2'></i>Logout </a>
                     </IonItem>
                 </IonList>
             </IonContent>

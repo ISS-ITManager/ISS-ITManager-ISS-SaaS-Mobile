@@ -100,7 +100,7 @@ const FAQS = () => {
     ) : [];
 
     return (
-        <MasterComponent page='knowledge-database'>
+        <MasterComponent page='itsm'>
             <TitleComponent title="Knowledge Database" />
             <div className="container mt-4">
                 {/* Search Input */}

@@ -63,6 +63,24 @@ const IncidentRequest = ({ type }) => {
 
             </div>
           </div>
+          
+          <div className="card border border-light mt-3 animate__animated animate__bounceInLeft"
+            onClick={() => {goToPage('/itsm/incident&request')
+            }}>
+            <div className="card-body">
+              <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
+                <div className="avatar avatar-lg">
+                  <div className="avatar-initial bg-label-primary rounded">
+                    <i className="bx bx-history text-primary icon-size-24 " ></i>
+                  </div>
+                </div>
+                <div className="content-right">
+                  <p className="mb-0 fw-medium"> History </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
       </div>
 
@@ -126,21 +144,6 @@ const IncidentRequest = ({ type }) => {
               </div>
             </div>
 
-
-            <div className="card border border-light animate__animated animate__bounceInRight">
-              <div className="card-body">
-                <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
-                  <div className="avatar avatar-lg">
-                    <div className="avatar-initial bg-label-primary rounded">
-                      <i className="bx bx-history text-primary icon-size-24" ></i>
-                    </div>
-                  </div>
-                  <div className="content-right">
-                    <p className="mb-0 fw-medium"> View {currentAction} History</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
 
@@ -176,7 +179,7 @@ const IncidentRequest = ({ type }) => {
                       </div>
                       <div className="col-12">
                         <label htmlFor="">Incident Number </label>
-                        <input type="text" className="form-control" name="" id="" value={"IR12323"} />
+                        <input type="text" className="form-control" name="" id="" value={"IN12323"} />
                       </div>
                       <div className="col-12">
                         <label htmlFor="">Subject</label>

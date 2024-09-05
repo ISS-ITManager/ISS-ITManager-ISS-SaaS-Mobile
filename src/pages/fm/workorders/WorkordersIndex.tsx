@@ -36,7 +36,7 @@ const WorkordersIndex = () => {
         // Function to fetch priority scores from the Flask API
         const fetchPriorityScores = async () => {
             try {
-                const response = await fetch("http://192.168.25.81:5000/prioritize", {
+                const response = await fetch('http://127.0.0.1:5000/prioritize', { //"http://192.168.25.81:5000/prioritize", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"

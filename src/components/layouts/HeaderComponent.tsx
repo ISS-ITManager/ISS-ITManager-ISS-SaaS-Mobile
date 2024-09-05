@@ -1,28 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import { IonButton, IonHeader, IonMenuToggle, IonToolbar } from '@ionic/react';
-import useGoToPage from '../../functions/useGoToPage';
-import BackButton from '../buttons/BackButton';
 import { menuController } from '@ionic/core/components';
 
 const HeaderComponent = () => {
 
     const toggleMenu = async () => {
-        console.log("toogle");
-        // await menuController.open();
-        menuController.open();
+        
+        await menuController.toggle('main-menu');
     };
 
-
     return (
-        <>
+        <>            
             <IonHeader>
                 <IonToolbar className='header'>
                     <div className='p-3'>
-                        <button className="btn btn-sm btn-outline-primary mt-2 rounded-pill" onClick={()=>toggleMenu()} >
+                        <button className="btn btn-sm btn-outline-primary mt-2 rounded-pill" onClick={toggleMenu} >
                             <i className="bx bx-menu"></i>
-                        </button>&nbsp;
-                        <span className='text-primary fw-bold text-uppercase mt-1' >
-                            <i className='bx bx-globe'></i>  ISSPHERE
+                        </button>
+                        <span className='text-primary fw-bold text-uppercase mt-1 m-3' >
+                            <i className='bx bx-globe mb-2'></i>  ISSPHERE
                         </span>
                         <div className='float-end' >
                             <button type="button" className="btn text-nowrap d-inline-block">

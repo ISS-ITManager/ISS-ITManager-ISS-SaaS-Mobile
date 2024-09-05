@@ -97,7 +97,7 @@ const ProfileIndex = () => {
     }
 
     return (
-        <MasterComponent>
+        <MasterComponent page="main">
             <TitleComponent title={"Profile"} />
             <div className="card mb-3 animate__animated animate__bounceInLeft border border-light">
                 <div className="card-body text-center">
