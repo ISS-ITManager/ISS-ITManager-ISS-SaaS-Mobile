@@ -56,6 +56,8 @@ import AgentChat from './pages/itsm/AgentChat';
 {/*-------------------------- HRSM --------------------------- */}
 import SubmitFeedback from './pages/hrsm/feedback/FeedBack';
 import PerformanceTrack from './pages/hrsm/performance/PerformanceTrack';
+import EmployeeTrack from './pages/hrsm/employee/Tracking';
+
 
 
 setupIonicReact();
@@ -154,6 +156,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/hrsm/perfomance-track">
           <PerformanceTrack />
+        </Route>
+        <Route exact path="/hrsm/task-track">
+          <EmployeeTrack />
         </Route>
 
       </IonRouterOutlet>
