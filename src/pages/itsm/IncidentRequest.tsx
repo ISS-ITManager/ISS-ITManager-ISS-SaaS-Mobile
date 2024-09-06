@@ -86,19 +86,19 @@ const IncidentRequest = () => {
 
       {/* Display Options */}
       <IonModal isOpen={showOptions} onDidDismiss={() => setShowOptions(false)}>
-        <IonContent className='ion-padding'>
-          <IonHeader>
-            <IonToolbar style={{ '--background': 'transparent', '--border-color': 'transparent', '--ion-toolbar-border-width': '0px' }}>
-              <div className="col-4 mb-3" slot="end">
-                <button className='btn mt-2 btn-primary float-end rounded-pill' onClick={() => setShowOptions(false)}>
-                  <i className='fa fa-times'></i>
-                </button>
-              </div>
-            </IonToolbar>
-          </IonHeader>
+        <IonHeader>
+          <IonToolbar style={{ '--background': 'transparent', '--border-color': 'transparent', '--ion-toolbar-border-width': '0px' }}>
+            <div className="col-4 mb-3" slot="end">
+              <button className='btn mt-2 btn-primary float-end rounded-pill' onClick={() => setShowOptions(false)}>
+                <i className='fa fa-times'></i>
+              </button>
+            </div>
+          </IonToolbar>
+        </IonHeader>
 
+        <IonContent className='ion-padding'>
           <div className="col-12">
-            <div className="card border border-light animate__animated animate__bounceInLeft mb-3">
+            <div className="card border border-light animate__animated animate__bounceInLeft mb-3" onClick={() => setShowModal(true)}>
               <div className="card-body">
                 <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
                   <div className="avatar avatar-lg">
@@ -107,13 +107,13 @@ const IncidentRequest = () => {
                     </div>
                   </div>
                   <div className="content-right">
-                    <p className="mb-0 fw-medium" onClick={() => setShowModal(true)}> Create {currentAction}</p>
+                    <p className="mb-0 fw-medium" > Create {currentAction}</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="card border border-light animate__animated animate__bounceInRight mb-3">
+            <div className="card border border-light animate__animated animate__bounceInRight mb-3" onClick={() => setShowAssign(true)}>
               <div className="card-body">
                 <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
                   <div className="avatar avatar-lg">
@@ -122,14 +122,14 @@ const IncidentRequest = () => {
                     </div>
                   </div>
                   <div className="content-right">
-                    <p className="mb-0 fw-medium" onClick={() => setShowAssign(true)}> Assign {currentAction}</p>
+                    <p className="mb-0 fw-medium"> Assign {currentAction}</p>
                   </div>
                 </div>
               </div>
             </div>
 
 
-            <div className="card border border-light animate__animated animate__bounceInLeft mb-3">
+            <div className="card border border-light animate__animated animate__bounceInLeft mb-3" onClick={() => setShowTrack(true)}>
               <div className="card-body">
                 <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
                   <div className="avatar avatar-lg">
@@ -138,7 +138,7 @@ const IncidentRequest = () => {
                     </div>
                   </div>
                   <div className="content-right">
-                    <p className="mb-0 fw-medium" onClick={() => setShowTrack(true)}> Track {currentAction}</p>
+                    <p className="mb-0 fw-medium"> Track {currentAction}</p>
                   </div>
                 </div>
               </div>

@@ -28,7 +28,7 @@ const HRLeaveLetter = () => {
                 <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
                   <div className="avatar avatar-lg">
                     <div className="avatar-initial bg-label-primary rounded">
-                      <i className="bx bx-edit text-primary icon-size-24 " ></i> 
+                      <i className="bx bx-edit text-primary icon-size-24 " ></i>
                     </div>
                   </div>
                   <div className="content-right">
@@ -98,7 +98,10 @@ const HRLeaveLetter = () => {
               </IonHeader>
 
               <div className="col-12">
-                <div className="card border border-light animate__animated animate__bounceInLeft mb-3">
+                <div className="card border border-light animate__animated animate__bounceInLeft mb-3"
+                  onClick={() => {
+                    { currentAction === "Letter" ? setShowRequest(true) : setShowLeaveRequest(true) }
+                  }}>
                   <div className="card-body">
                     <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
                       <div className="avatar avatar-lg">
@@ -107,10 +110,7 @@ const HRLeaveLetter = () => {
                         </div>
                       </div>
                       <div className="content-right">
-                        <p className="mb-0 fw-medium"
-                          onClick={() => {
-                            { currentAction === "Letter" ? setShowRequest(true) : setShowLeaveRequest(true) }
-                          }}> {currentAction} Request </p>
+                        <p className="mb-0 fw-medium"> {currentAction} Request </p>
                       </div>
                     </div>
                   </div>
@@ -118,7 +118,7 @@ const HRLeaveLetter = () => {
 
 
 
-                <div className="card border border-light animate__animated animate__bounceInRight mb-3">
+                <div className="card border border-light animate__animated animate__bounceInRight mb-3" onClick={() => setShowTrack(true)}>
                   <div className="card-body">
                     <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
                       <div className="avatar avatar-lg">
@@ -127,14 +127,14 @@ const HRLeaveLetter = () => {
                         </div>
                       </div>
                       <div className="content-right">
-                        <p className="mb-0 fw-medium" onClick={() => setShowTrack(true)}> Track {currentAction}</p>
+                        <p className="mb-0 fw-medium"> Track {currentAction}</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
 
-                <div className="card border border-light animate__animated animate__bounceInLeft">
+                <div className="card border border-light animate__animated animate__bounceInLeft" onClick={() => setShowForApproval(true)}>
                   <div className="card-body">
                     <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
                       <div className="avatar avatar-lg">
@@ -143,7 +143,7 @@ const HRLeaveLetter = () => {
                         </div>
                       </div>
                       <div className="content-right">
-                        <p className="mb-0 fw-medium" onClick={() => setShowForApproval(true)}> {currentAction} Approval</p>
+                        <p className="mb-0 fw-medium"> {currentAction} Approval</p>
                       </div>
                     </div>
                   </div>

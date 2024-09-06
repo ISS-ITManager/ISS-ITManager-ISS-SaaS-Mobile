@@ -10,18 +10,16 @@ const MasterComponent = ({ children, page }) => {
 
   return (
     <>
-      {/* <IonApp> */}
-          <SidebarComponent module={page}/>
-          <IonPage>
-            <HeaderComponent />
-            <IonContent className="ion-padding content-body">
-              {children}
-              {/* <BrandComponent /> */}
-            </IonContent>
-            <FooterComponent module={page} />
-          </IonPage>
-        <IonRouterOutlet id="main-content"></IonRouterOutlet>
-      {/* </IonApp> */}
+      <SidebarComponent />
+      <IonPage>
+        <HeaderComponent />
+        <IonContent className="ion-padding content-body">
+          {children}
+          {/* <BrandComponent /> */}
+        </IonContent>
+        <FooterComponent />
+      </IonPage>
+      <IonRouterOutlet id="main-content"></IonRouterOutlet>
     </>
   )
 }

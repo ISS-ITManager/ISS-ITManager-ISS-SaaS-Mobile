@@ -45,7 +45,7 @@ const Incident_Request_History: React.FC = () => {
 
     return (
         <MasterComponent page='itsm'>
-            <TitleComponent title="Incident Request History" />
+            <TitleComponent title="ITSM" subtitle="Incident Request History" />
             <div className="container mt-4">
                 {/* Search Input */}
                 <div className="row mb-4">

@@ -46,7 +46,7 @@ const HRAttendance = () => {
                     <br /><small>Sept 2, 2024</small>
                   </li>
                   <li className="list-group-item list-group-timeline-info">
-                    <span className='fw-bold text-primary'>Time Out - 16:30:01 </span>
+                    <span className='fw-bold text-primary'>Time Out - 15:30:01 </span>
                     <br /><small>Sept 2, 2024</small>
                   </li>
                 </ul>
@@ -64,7 +64,7 @@ const HRAttendance = () => {
                     <br /><small>Sept 2, 2024</small>
                   </li>
                   <li className="list-group-item list-group-timeline-info">
-                    <span className='fw-bold text-primary'>Time Out - 16:30:01 </span>
+                    <span className='fw-bold text-primary'>Time Out - 15:30:01 </span>
                     <br /><small>Sept 2, 2024</small>
                   </li>
                 </ul>
@@ -82,7 +82,7 @@ const HRAttendance = () => {
                     <br /><small>Sept 2, 2024</small>
                   </li>
                   <li className="list-group-item list-group-timeline-info">
-                    <span className='fw-bold text-primary'>Time Out - 16:30:01 </span>
+                    <span className='fw-bold text-primary'>Time Out - 15:30:01 </span>
                     <br /><small>Sept 2, 2024</small>
                   </li>
                 </ul>

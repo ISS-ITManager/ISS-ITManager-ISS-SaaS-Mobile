@@ -96,7 +96,7 @@ const DashboardIndex = () => {
 
     return (
         <MasterComponent page='fm'>
-            <TitleComponent title={"ITSM"} subtitle={"Dashboard"} />
+            <TitleComponent title={"FM"} subtitle={"Dashboard"} />
             <div className="row mb-3 animate__animated animate__bounceInLeft">
                 <div className="col-12 mb-3">
                     <div className="card h-100 border border-light">

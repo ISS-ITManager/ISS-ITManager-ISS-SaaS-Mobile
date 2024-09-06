@@ -143,6 +143,7 @@ const Login = () => {
                 localStorage.setItem('userRole', role);
                 localStorage.setItem('userData', JSON.stringify(user));
                 localStorage.setItem('accessToken', access_token);
+                localStorage.setItem('currentModule', "main");
 
                 // Navigate to the appropriate dashboard based on role
                 // switch (role) {
@@ -185,9 +186,9 @@ const Login = () => {
                     <div className="container d-flex flex-column p-5 justify-content-center" style={{ height: '70vh' }}>
                         <div className="row mt-3">
                             <div className="col-12 text-center mb-5">
-                                <i className='bx bxs-buildings text-primary' style={{fontSize : "4em"}}></i> <br />
-                                <span className='fw-bold text-primary h1'>CAFM</span> <br />
-                                <span className="h5 text-dark">Computer Aided Facility Management</span>
+                                <i className='bx bx-globe text-primary' style={{fontSize : "4em"}}></i> <br />
+                                <span className='fw-bold text-primary h1'>ISSPHERE</span> <br />
+                                {/* <span className="h5 text-dark">Computer Aided Facility Management</span> */}
                             </div>
                             <div className="col-12">
                                 <span className='fw-bold text-dark h3'>SIGN IN</span>

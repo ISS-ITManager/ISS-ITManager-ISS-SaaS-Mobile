@@ -2,13 +2,13 @@ import React, { useEffect, useRef, useState, useContext, createContext, useImper
 import { IonContent, IonGrid, IonMenu, useIonViewWillLeave, IonRow, IonCol, IonList, IonItem, IonSelect, IonSelectOption } from '@ionic/react';
 import Image from '../constants/Image';
 import useGoToPage from '../../functions/useGoToPage';
-import { useMenu } from '../../functions/MenuContext';
+import BrandComponent from './BrandComponent';
 
 
-const SidebarComponent = ({ module }) => {
+const SidebarComponent = () => {
     const goToPage = useGoToPage();
     const menuRef = useRef<HTMLIonMenuElement>(null);
-    const [currentModule, setCurrentModule] = useState(module);
+    const [currentModule, setCurrentModule] = useState(localStorage.getItem("currentModule"));
 
     useIonViewWillLeave(() => {
         if (menuRef.current) {
@@ -23,17 +23,16 @@ const SidebarComponent = ({ module }) => {
         goToPage('/login');
     };
 
-    useEffect(() => {
-        setCurrentModule(module);
 
-    }, [])
-
-    const handleSelectItem = (path) => {
+    const handleSelectItem = (path, mod) => {
         goToPage(path);
         if (menuRef.current) {
             menuRef.current.close();
         }
+        setCurrentModule(mod);
+        localStorage.setItem("currentModule", mod);
     }
+
 
     return (
         <IonMenu side="start" contentId="main-content" menuId="main-menu" ref={menuRef}>
@@ -55,19 +54,19 @@ const SidebarComponent = ({ module }) => {
                     </IonRow>
                 </IonGrid>
                 <IonList lines="none" className='bg'>
-                    <IonItem onClick={() => handleSelectItem('/main-dashboard')}>
-                        {module === "main" ? <span className='badge bg-primary rounded-pill animate__animated animate__rubberBand'><i className='bx bx-globe me-2'></i>Home</span> : <a className='ms-2'><i className='bx bx-globe me-2'></i>HOME </a>}
+                    <IonItem onClick={() => handleSelectItem('/main-dashboard', 'main')}>
+                        {currentModule === "main" ? <span className='badge bg-primary rounded-pill animate__animated animate__rubberBand'><i className='bx bx-globe me-2'></i>Home</span> : <a className='ms-2'><i className='bx bx-globe me-2'></i>HOME </a>}
 
                     </IonItem>
-                    <IonItem onClick={() => handleSelectItem('/itsm/dashboard')}>
-                        {module === "itsm" ? <span className='badge bg-primary rounded-pill animate__animated animate__rubberBand'><i className='bx bx-globe me-2'></i>ITSM</span> :
+                    <IonItem onClick={() => handleSelectItem('/itsm/dashboard', 'itsm')}>
+                        {currentModule === "itsm" ? <span className='badge bg-primary rounded-pill animate__animated animate__rubberBand'><i className='bx bx-globe me-2'></i>ITSM</span> :
                             <a className='ms-2'><i className='bx bx-briefcase me-2'></i>ITSM </a>}
                     </IonItem>
-                    <IonItem onClick={() => handleSelectItem('/fm')}>
-                        {module === "fm" ? <span className='badge bg-primary rounded-pill animate__animated animate__rubberBand'><i className='bx bx-globe me-2'></i>FM</span> : <a className='ms-2'><i className='bx bx-buildings me-2'></i>FM </a>}
+                    <IonItem onClick={() => handleSelectItem('/fm', 'fm')}>
+                        {currentModule === "fm" ? <span className='badge bg-primary rounded-pill animate__animated animate__rubberBand'><i className='bx bx-globe me-2'></i>FM</span> : <a className='ms-2'><i className='bx bx-buildings me-2'></i>FM </a>}
                     </IonItem>
-                    <IonItem onClick={() => handleSelectItem('/hrsm/attendance')}>
-                        {module === "hrsm" ? <span className='badge bg-primary rounded-pill animate__animated animate__rubberBand'><i className='bx bx-globe me-2'></i>HRSM</span> : <a className='ms-2'><i className='bx bx-group me-2'></i>HRSM </a>}
+                    <IonItem onClick={() => handleSelectItem('/hrsm/attendance', 'hrsm')}>
+                        {currentModule === "hrsm" ? <span className='badge bg-primary rounded-pill animate__animated animate__rubberBand'><i className='bx bx-globe me-2'></i>HRSM</span> : <a className='ms-2'><i className='bx bx-group me-2'></i>HRSM </a>}
                     </IonItem>
                 </IonList>
                 <IonGrid>
@@ -78,8 +77,8 @@ const SidebarComponent = ({ module }) => {
                     </IonRow>
                 </IonGrid>
                 <IonList lines="none" className='bg'>
-                    <IonItem onClick={() => handleSelectItem('/agent-chat')}>
-                        <a className='ms-2'><i className='bx bx-support me-2'></i>Agent Chat</a>
+                    <IonItem onClick={() => handleSelectItem('/agent-chat', 'chat')}>
+                        {currentModule === "chat" ? <span className='badge bg-primary rounded-pill animate__animated animate__rubberBand'><i className='bx bx-support me-2'></i>Agent Chat</span> : <a className='ms-2'><i className='bx bx-support me-2'></i>Agent Chat </a>}
                     </IonItem>
                 </IonList>
                 <IonGrid>
@@ -90,13 +89,14 @@ const SidebarComponent = ({ module }) => {
                     </IonRow>
                 </IonGrid>
                 <IonList lines="none" className='bg'>
-                    <IonItem onClick={() => handleSelectItem('/profile')}>
-                        <a className='ms-2'><i className='bx bx-user me-2'></i>Profile </a>
+                    <IonItem onClick={() => handleSelectItem('/profile', 'profile')}>
+                        {currentModule === "profile" ? <span className='badge bg-primary rounded-pill animate__animated animate__rubberBand'><i className='bx bx-user me-2'></i>Profile</span> : <a className='ms-2'><i className='bx bx-user me-2'></i>Profile</a>}
                     </IonItem>
                     <IonItem onClick={handleLogout}>
                         <a className='ms-2'><i className='bx bx-power-off me-2'></i>Logout </a>
                     </IonItem>
                 </IonList>
+                <BrandComponent />
             </IonContent>
         </IonMenu>
     )

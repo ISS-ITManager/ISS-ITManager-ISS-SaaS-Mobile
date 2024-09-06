@@ -9,6 +9,11 @@ const DashboardMain = () => {
 
     const goToPage = useGoToPage();
 
+    const handleSelect = (page, module) => {
+        goToPage(page);
+        localStorage.setItem("currentModule", module);
+    }
+
 
     return (
         <MasterComponent page="main">
@@ -24,7 +29,7 @@ const DashboardMain = () => {
                                     </div>
                                 </div>
                                 <div className="content-right">
-                                    <p className="mb-0 fw-medium" onClick={() => goToPage('/itsm/dashboard')}> IT Service Management</p>
+                                    <p className="mb-0 fw-medium" onClick={()=>handleSelect('/itsm/dashboard', 'itsm')}> IT Service Management</p>
                                 </div>
                             </div>
 
@@ -40,7 +45,7 @@ const DashboardMain = () => {
                                     </div>
                                 </div>
                                 <div className="content-right">
-                                    <p className="mb-0 fw-medium" onClick={() => goToPage('/fm/admin-dashboard')}> Facilities Management </p>
+                                    <p className="mb-0 fw-medium" onClick={() => handleSelect('/fm/admin-dashboard', 'fm')}> Facilities Management </p>
                                 </div>
                             </div>
 
@@ -56,7 +61,7 @@ const DashboardMain = () => {
                                     </div>
                                 </div>
                                 <div className="content-right">
-                                    <p className="mb-0 fw-medium" onClick={() => goToPage('/hrsm/attendance')}> Human Resources Service Management</p>
+                                    <p className="mb-0 fw-medium" onClick={() => handleSelect('/hrsm/attendance', 'hrsm')}> Human Resources Service Management</p>
                                 </div>
                             </div>
 
