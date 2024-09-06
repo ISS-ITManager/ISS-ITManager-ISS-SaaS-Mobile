@@ -27,8 +27,8 @@ const HRLeaveLetter = () => {
               <div className="card-body">
                 <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
                   <div className="avatar avatar-lg">
-                    <div className="avatar-initial bg-label-primary rounded">
-                      <i className="bx bx-edit text-primary icon-size-24 " ></i>
+                    <div className="avatar-initial bg-primary rounded-circle d-flex justify-content-center align-items-center" style={{ width: '100%', height: '100%' }}>
+                      <i className="bx bx-edit text-white icon-size-24 " ></i>
                     </div>
                   </div>
                   <div className="content-right">
@@ -49,8 +49,8 @@ const HRLeaveLetter = () => {
               <div className="card-body">
                 <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
                   <div className="avatar avatar-lg">
-                    <div className="avatar-initial bg-label-primary rounded">
-                      <i className="bx bx-file text-primary icon-size-24 " ></i>
+                    <div className="avatar-initial bg-primary rounded-circle d-flex justify-content-center align-items-center" style={{ width: '100%', height: '100%' }}>
+                      <i className="bx bx-file text-white icon-size-24 " ></i>
                     </div>
                   </div>
                   <div className="content-right"  >
@@ -69,8 +69,8 @@ const HRLeaveLetter = () => {
               <div className="card-body">
                 <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
                   <div className="avatar avatar-lg">
-                    <div className="avatar-initial bg-label-primary rounded">
-                      <i className="bx bx-calendar-edit text-primary icon-size-24 " ></i>
+                    <div className="avatar-initial bg-primary rounded-circle d-flex justify-content-center align-items-center" style={{ width: '100%', height: '100%' }}>
+                      <i className="bx bx-calendar-edit text-white icon-size-24 " ></i>
                     </div>
                   </div>
                   <div className="content-right">

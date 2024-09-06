@@ -32,8 +32,8 @@ const IncidentRequest = () => {
             <div className="card-body">
               <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
                 <div className="avatar avatar-lg">
-                  <div className="avatar-initial bg-label-primary rounded">
-                    <i className="bx bx-alarm-exclamation text-primary icon-size-24 " ></i>
+                  <div className="avatar-initial bg-primary rounded-circle d-flex justify-content-center align-items-center" style={{ width: '100%', height: '100%' }}>
+                    <i className="bx bx-alarm-exclamation text-white icon-size-24 " ></i>
                   </div>
                 </div>
                 <div className="content-right"  >
@@ -51,8 +51,8 @@ const IncidentRequest = () => {
             <div className="card-body">
               <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
                 <div className="avatar avatar-lg">
-                  <div className="avatar-initial bg-label-primary rounded">
-                    <i className="bx bxs-user-voice text-primary icon-size-24 " ></i>
+                  <div className="avatar-initial bg-primary rounded-circle d-flex justify-content-center align-items-center" style={{ width: '100%', height: '100%' }}>
+                    <i className="bx bxs-user-voice text-white icon-size-24 " ></i>
                   </div>
                 </div>
                 <div className="content-right">
@@ -70,8 +70,8 @@ const IncidentRequest = () => {
             <div className="card-body">
               <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
                 <div className="avatar avatar-lg">
-                  <div className="avatar-initial bg-label-primary rounded">
-                    <i className="bx bx-history text-primary icon-size-24 " ></i>
+                  <div className="avatar-initial bg-primary rounded-circle d-flex justify-content-center align-items-center" style={{ width: '100%', height: '100%' }}>
+                    <i className="bx bx-history text-white icon-size-24 " ></i>
                   </div>
                 </div>
                 <div className="content-right">
@@ -102,8 +102,8 @@ const IncidentRequest = () => {
               <div className="card-body">
                 <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
                   <div className="avatar avatar-lg">
-                    <div className="avatar-initial bg-label-primary rounded">
-                      <i className="bx bx-add-to-queue text-primary icon-size-24"  ></i>
+                    <div className="avatar-initial bg-primary rounded-circle d-flex justify-content-center align-items-center" style={{ width: '100%', height: '100%' }}>
+                      <i className="bx bx-add-to-queue text-white icon-size-24"  ></i>
                     </div>
                   </div>
                   <div className="content-right">
@@ -117,8 +117,8 @@ const IncidentRequest = () => {
               <div className="card-body">
                 <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
                   <div className="avatar avatar-lg">
-                    <div className="avatar-initial bg-label-primary rounded">
-                      <i className="bx bxs-right-arrow-circle text-primary icon-size-24"  ></i>
+                    <div className="avatar-initial bg-primary rounded-circle d-flex justify-content-center align-items-center" style={{ width: '100%', height: '100%' }}>
+                      <i className="bx bxs-right-arrow-circle text-white icon-size-24"  ></i>
                     </div>
                   </div>
                   <div className="content-right">
@@ -133,8 +133,8 @@ const IncidentRequest = () => {
               <div className="card-body">
                 <div className="d-flex align-items-center gap-4 me-6 me-sm-0">
                   <div className="avatar avatar-lg">
-                    <div className="avatar-initial bg-label-primary rounded">
-                      <i className="bx bx-current-location text-primary icon-size-24" ></i>
+                    <div className="avatar-initial bg-primary rounded-circle d-flex justify-content-center align-items-center" style={{ width: '100%', height: '100%' }}>
+                      <i className="bx bx-current-location text-white icon-size-24" ></i>
                     </div>
                   </div>
                   <div className="content-right">
