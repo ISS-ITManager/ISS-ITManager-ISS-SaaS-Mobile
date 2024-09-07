@@ -129,7 +129,7 @@ const PerformanceTrack: React.FC = () => {
                                                 <h5>{metric.name}</h5>
                                                 <div className="progress">
                                                     <div
-                                                        className="progress-bar bg-info"
+                                                        className="progress-bar bg-primary"
                                                         role="progressbar"
                                                         style={{ width: `${metric.value}%` }}
                                                         aria-valuenow={metric.value}
