@@ -3,14 +3,16 @@ import MasterComponent from '../../components/layouts/MasterComponent';
 import TitleComponent from '../../components/layouts/TitleComponent';
 import { IonContent } from '@ionic/react';
 import useGoToPage from '../../functions/useGoToPage';
+import { useModule } from '../../utilities/ModuleProvider';
 
 const DashboardMain = () => {
     const goToPage = useGoToPage();
+    const { updateModule } = useModule();
 
     const handleSelect = (page, module) => {
         goToPage(page);
-        localStorage.setItem("currentModule", module);
-    }
+        updateModule(module);
+    };
 
     return (
         <MasterComponent page="main">

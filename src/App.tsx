@@ -1,6 +1,8 @@
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
+import { ModuleProvider } from './utilities/ModuleProvider';
+
 import Home from './pages/Home';
 
 /* Core CSS required for Ionic components to work properly */
@@ -62,6 +64,7 @@ import PerformanceTrack from './pages/hrsm/performance/PerformanceTrack';
 setupIonicReact();
 
 const App: React.FC = () => (
+  <ModuleProvider>
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
@@ -173,6 +176,7 @@ const App: React.FC = () => (
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
+  </ModuleProvider>
 );
 
 export default App;
