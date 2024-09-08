@@ -23,11 +23,11 @@ const DashboardMain = () => {
                             <div className="card-body d-flex align-items-center gap-4 cursor-pointer" onClick={() => handleSelect('/itsm/dashboard', 'itsm')}>
                                 <div className="avatar avatar-lg d-flex justify-content-center align-items-center" style={{ width: '70px', height: '70px', flexShrink: 0 }}>
                                     <div className="avatar-initial bg-primary rounded-circle d-flex justify-content-center align-items-center" style={{ width: '100%', height: '100%' }}>
-                                        <i className="bx bx-briefcase text-white icon-size-32"></i>
+                                        <i className="bx bx-briefcase text-white icon-size-24"></i>
                                     </div>
                                 </div>
                                 <div className="content-right flex-grow-1">
-                                    <p className="mb-0 fw-semibold text-dark fs-5">IT Service Management</p>
+                                    <p className="mb-0 fw-semibold text-dark">IT Service Management</p>
                                 </div>
                             </div>
                         </div>
@@ -39,11 +39,11 @@ const DashboardMain = () => {
                             <div className="card-body d-flex align-items-center gap-4 cursor-pointer" onClick={() => handleSelect('/fm/admin-dashboard', 'fm')}>
                                 <div className="avatar avatar-lg d-flex justify-content-center align-items-center" style={{ width: '70px', height: '70px', flexShrink: 0 }}>
                                     <div className="avatar-initial bg-primary rounded-circle d-flex justify-content-center align-items-center" style={{ width: '100%', height: '100%' }}>
-                                        <i className="bx bx-buildings text-white icon-size-32"></i>
+                                        <i className="bx bx-buildings text-white icon-size-24"></i>
                                     </div>
                                 </div>
                                 <div className="content-right flex-grow-1">
-                                    <p className="mb-0 fw-semibold text-dark fs-5">Facilities Management</p>
+                                    <p className="mb-0 fw-semibold text-dark">Facilities Management</p>
                                 </div>
                             </div>
                         </div>
@@ -55,11 +55,11 @@ const DashboardMain = () => {
                             <div className="card-body d-flex align-items-center gap-4 cursor-pointer" onClick={() => handleSelect('/hrsm/attendance', 'hrsm')}>
                                 <div className="avatar avatar-lg d-flex justify-content-center align-items-center" style={{ width: '70px', height: '70px', flexShrink: 0 }}>
                                     <div className="avatar-initial bg-primary rounded-circle d-flex justify-content-center align-items-center" style={{ width: '100%', height: '100%' }}>
-                                        <i className="bx bx-group text-white icon-size-32"></i>
+                                        <i className="bx bx-group text-white icon-size-24"></i>
                                     </div>
                                 </div>
                                 <div className="content-right flex-grow-1">
-                                    <p className="mb-0 fw-semibold text-dark fs-5">Human Resources Service Management</p>
+                                    <p className="mb-0 fw-semibold text-dark">Human Resources Service Management</p>
                                 </div>
                             </div>
                         </div>
