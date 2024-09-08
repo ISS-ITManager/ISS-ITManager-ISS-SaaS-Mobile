@@ -33,7 +33,7 @@ const HRAttendance = () => {
           </div>
         </div>
 
-        {showResults && <div className="card-body">
+        {showResults && <div className="card-body mb-5">
           <ul className="list-group" >
             <li className="list-group-item list-group-timeline-info">
               <span>
