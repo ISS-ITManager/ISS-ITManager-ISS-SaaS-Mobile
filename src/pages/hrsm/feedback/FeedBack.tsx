@@ -31,7 +31,7 @@ const Feedback: React.FC = () => {
 
     return (
         <MasterComponent page="hrsm">
-            <TitleComponent title="Submit Suggestion or Complaint" />
+            <TitleComponent title="HRSM" subtitle="Submit Suggestion or Complaint" />
             <div className="container mt-4">
                 {submitted && (
                     <div className="alert alert-success" role="alert">

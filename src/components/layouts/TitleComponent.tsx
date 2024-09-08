@@ -6,7 +6,7 @@ const TitleComponent = ({ title, subtitle }) => {
 		<div className="row">
 			<div className="col-12 mb-3">
 				<nav aria-label="breadcrumb">
-					<ol className="breadcrumb bg-light p-3 rounded shadow-sm">
+					<ol className="breadcrumb bg-light p-3 rounded ">
 						<li className="breadcrumb-item">
 							<span className="badge bg-primary rounded-pill px-3 py-2 animate__animated animate__fadeIn">
 								{title}
@@ -18,7 +18,7 @@ const TitleComponent = ({ title, subtitle }) => {
 									<FaChevronRight className="text-muted mx-2" />
 								</li>
 								<li className="breadcrumb-item active">
-									<span className="badge bg-secondary rounded-pill px-3 py-2 animate__animated animate__fadeIn">
+									<span className="badge bg-secondary rounded-pill px-3 py-2 animate__animated animate__rubberBand">
 										{subtitle}
 									</span>
 								</li>

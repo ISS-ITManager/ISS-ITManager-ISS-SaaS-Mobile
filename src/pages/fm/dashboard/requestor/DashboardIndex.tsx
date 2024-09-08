@@ -108,7 +108,7 @@ const DashboardIndex: React.FC = () => {
 
   return (
     <MasterComponent page="fm">
-      <TitleComponent title={"Requestor Dashboard"} />
+      <TitleComponent title="FM" subtitle={"Requestor Dashboard"} />
       <div className="container">
         <div className="row my-3">
           <div className="col-12">
